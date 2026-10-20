@@ -26,7 +26,7 @@ window.PORTFOLIO = {
     location: "Indonesia · GMT+7",
     availability: "Overlap with EU & APAC hours",
     language: "English: Professional",
-    email: "nabilakarimaazka@email.com",
+    email: "nabilakarimaazka@gmail.com",
     linkedin: "https://linkedin.com/in/nabilakarima",
     github: "https://github.com/nabilakarimaazka",
     resume: "",            // contoh: "resume.pdf" (upload file PDF-nya ke repo)
