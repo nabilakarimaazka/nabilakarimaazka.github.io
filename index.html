@@ -8,7 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="data.js"></script>
+<!-- Load data.js fresh on every visit so updates show up right away (GitHub Pages caches files for 10 minutes) -->
+<script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>document.documentElement.dataset.palette = (window.PORTFOLIO && window.PORTFOLIO.theme) || "brown";</script>
 <style>
   /* Color themes: set `theme` in data.js to brown, blue or pink */
