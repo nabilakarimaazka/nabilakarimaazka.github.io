@@ -3,170 +3,262 @@
    - Teks selalu di dalam tanda kutip "...".
    - Setiap item dipisah koma. Kalau website kosong setelah diedit,
      biasanya ada koma atau tanda kutip yang hilang.
-   - Gambar: upload ke folder "images", lalu tulis misalnya "images/churn.png".
+   - true / false selalu huruf kecil.
+   - Gambar: upload ke folder "images", lalu tulis misalnya "images/me.jpg".
+
+   DUA BAHASA (tombol EN / ID di website):
+   - Teks dua bahasa ditulis begini:  { en: "Hello", id: "Halo" }
+   - Teks yang sama di kedua bahasa cukup ditulis biasa: "Python"
    ===================================================================== */
 
 window.PORTFOLIO = {
 
-  // Warna tema: "brown", "blue", atau "pink"
-  theme: "pink",
+  // Warna tema: "blue", "coral", "pink", atau "brown"
+  theme: "blue",
+
+  // Bahasa saat website pertama dibuka: "en" atau "id"
+  defaultLanguage: "en",
 
   // Username GitHub kamu. Repo yang punya topic "portfolio" + sebuah Release
   // akan muncul otomatis sebagai project. Kosongkan "" kalau tidak mau.
   githubUsername: "",
 
   profile: {
+    greeting: { en: "Hi, I'm", id: "Hai, saya" },
     name: "Nabila Karima Azka",
     initials: "NK",
     role: "Junior Data Scientist",
-    status: "Open to remote roles · Full-time & contract",
-    headline: "Data Scientist turning messy data into",
-    headlineHighlight: "decisions that move metrics.",
-    intro: "I build machine learning models, analytics pipelines and dashboards that teams actually use — from problem framing to production. Focused on forecasting, NLP and customer analytics.",
+    status: { en: "Open to remote roles · Full-time & contract", id: "Terbuka untuk kerja remote · Full-time & kontrak" },
+    intro: {
+      en: "I build machine learning models, analytics pipelines and dashboards that teams actually use — from problem framing to production. Focused on forecasting, NLP and customer analytics.",
+      id: "Saya membangun model machine learning, pipeline analitik, dan dashboard yang benar-benar dipakai tim — mulai dari merumuskan masalah sampai ke produksi. Fokus pada forecasting, NLP, dan customer analytics.",
+    },
     location: "Indonesia · GMT+7",
-    availability: "Overlap with EU & APAC hours",
-    language: "English: Professional",
     email: "nabilakarimaazka@gmail.com",
     linkedin: "https://linkedin.com/in/nabilakarima",
     github: "https://github.com/nabilakarimaazka",
-    resume: "",            // contoh: "resume.pdf" (upload file PDF-nya ke repo)
-    photo: "",             // opsional, contoh: "images/me.jpg"
+    resume: "",   // contoh: "resume.pdf" (upload file PDF-nya ke repo)
+    photo: "images/rima.jpg",    // foto di kotak kanan atas, contoh: "images/me.jpg" (upload fotonya ke folder images)
   },
 
-  // Angka di kartu kanan atas
+  // Angka besar di kartu bawah nama. Bisa 1 atau 2 kartu.
   heroKpis: [
-    { value: "8+", label: "End-to-end projects" },
-    { value: "-23%", label: "Forecast error (MAPE)" },
+    { value: { en: "3+ yrs", id: "3+ thn" }, label: { en: "Years of experience", id: "Pengalaman" } },
+    { value: "8+", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
   ],
 
-  // Baris statistik di bawah hero
-  stats: [
-    { value: "3+ yrs", label: "Working with data" },
-    { value: "8", label: "Projects shipped" },
-    { value: "12", label: "Certifications" },
-    { value: "100%", label: "Remote-ready setup" },
-  ],
+  // Chip di kartu "Tech stack"
+  techStack: ["Python", "SQL", "Pandas", "scikit-learn", "XGBoost", "PyTorch", "Tableau", "BigQuery"],
 
   /* ---------------------------------------------------------------
      PROJECTS — untuk menambah project, salin satu blok { ... },
      tempel di bawahnya, lalu ganti isinya.
-     chart: gaya grafik otomatis kalau tidak ada gambar
-            ("line", "area", "bars", "scatter")
-     repo:  opsional, "username/nama-repo" → kartu menampilkan
-            versi Release terbaru, stars, dan bahasa dari GitHub.
+     category: dipakai untuk tombol filter
+     featured: true → tampil besar di paling atas
+     image:    gambar cover (screenshot dashboard/chart). Kalau kosong,
+               cover dibuat otomatis.
+     chart:    gaya cover otomatis: "line", "area", "bars", "scatter"
+     date:     periode project, contoh "Jan 2025 — Mar 2025"
+     logo:     opsional, ikon kecil project, contoh "images/logo-churn.png"
+     repo:     opsional, "username/nama-repo" → kartu menampilkan
+               versi Release terbaru & stars dari GitHub.
      --------------------------------------------------------------- */
   projects: [
     {
-      title: "Retail Demand Forecasting for 1,200 SKUs",
+      title: { en: "Retail Demand Forecasting for 1,200 SKUs", id: "Forecasting Permintaan Ritel untuk 1.200 SKU" },
       category: "Machine Learning",
       featured: true,
       image: "",
       chart: "line",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Built a forecasting system that predicts weekly demand per product and store, replacing spreadsheet-based planning.",
+      summary: {
+        en: "Built a forecasting system that predicts weekly demand per product and store, replacing spreadsheet-based planning.",
+        id: "Membangun sistem forecasting yang memprediksi permintaan mingguan per produk dan toko, menggantikan perencanaan berbasis spreadsheet.",
+      },
       impact: [
-        { value: "-23%", label: "forecast error (MAPE)" },
-        { value: "$180K", label: "est. inventory savings / yr" },
-        { value: "4 hrs → 5 min", label: "weekly planning time" },
+        { value: "-23%", label: { en: "forecast error (MAPE)", id: "error forecast (MAPE)" } },
+        { value: "$180K", label: { en: "est. inventory savings / yr", id: "estimasi hemat stok / tahun" } },
+        { value: "4 hrs → 5 min", label: { en: "weekly planning time", id: "waktu perencanaan mingguan" } },
       ],
-      problem: "Planners relied on last-year averages, causing frequent stock-outs and overstock.",
-      approach: "Feature engineering on seasonality, promotions and holidays; compared Prophet, LightGBM and a hierarchical baseline; time-series cross-validation.",
-      result: "LightGBM with lag features won; deployed as a weekly batch job with a Streamlit dashboard for planners.",
+      problem: {
+        en: "Planners relied on last-year averages, causing frequent stock-outs and overstock.",
+        id: "Tim perencana mengandalkan rata-rata tahun lalu, sehingga sering terjadi kehabisan stok maupun stok berlebih.",
+      },
+      approach: {
+        en: "Feature engineering on seasonality, promotions and holidays; compared Prophet, LightGBM and a hierarchical baseline; time-series cross-validation.",
+        id: "Feature engineering untuk musiman, promosi, dan hari libur; membandingkan Prophet, LightGBM, dan baseline hierarkis; time-series cross-validation.",
+      },
+      result: {
+        en: "LightGBM with lag features won; deployed as a weekly batch job with a Streamlit dashboard for planners.",
+        id: "LightGBM dengan lag features terpilih; di-deploy sebagai batch job mingguan dengan dashboard Streamlit untuk tim perencana.",
+      },
       tags: ["Python", "LightGBM", "Prophet", "SQL", "Streamlit", "Airflow"],
       github: "https://github.com/yourname/demand-forecasting",
       demo: "",
     },
     {
-      title: "Customer Churn Prediction & Retention Playbook",
+      title: { en: "Customer Churn Prediction & Retention Playbook", id: "Prediksi Churn Pelanggan & Strategi Retensi" },
       category: "Machine Learning",
       featured: false,
       image: "",
       chart: "bars",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Classified at-risk subscribers and explained churn drivers with SHAP so marketing could act on them.",
+      summary: {
+        en: "Classified at-risk subscribers and explained churn drivers with SHAP so marketing could act on them.",
+        id: "Mengklasifikasikan pelanggan berisiko churn dan menjelaskan faktor penyebabnya dengan SHAP agar tim marketing bisa bertindak.",
+      },
       impact: [
         { value: "0.87", label: "ROC-AUC" },
-        { value: "+12%", label: "retention in pilot" },
+        { value: "+12%", label: { en: "retention in pilot", id: "retensi saat uji coba" } },
       ],
-      problem: "Marketing had no way to prioritise which customers to target with retention offers.",
-      approach: "XGBoost with class-imbalance handling, SHAP for explainability, uplift-based targeting segments.",
-      result: "Top-decile targeting captured 41% of churners; pilot campaign improved retention by 12%.",
+      problem: {
+        en: "Marketing had no way to prioritise which customers to target with retention offers.",
+        id: "Tim marketing tidak punya cara untuk memprioritaskan pelanggan mana yang perlu diberi penawaran retensi.",
+      },
+      approach: {
+        en: "XGBoost with class-imbalance handling, SHAP for explainability, uplift-based targeting segments.",
+        id: "XGBoost dengan penanganan class imbalance, SHAP untuk explainability, dan segmentasi target berbasis uplift.",
+      },
+      result: {
+        en: "Top-decile targeting captured 41% of churners; pilot campaign improved retention by 12%.",
+        id: "Menargetkan 10% teratas berhasil menjangkau 41% pelanggan yang churn; kampanye uji coba menaikkan retensi 12%.",
+      },
       tags: ["Python", "XGBoost", "SHAP", "scikit-learn"],
       github: "https://github.com/yourname/churn-prediction",
       demo: "",
     },
     {
-      title: "Product Review Sentiment & Topic Analysis",
+      title: { en: "Product Review Sentiment & Topic Analysis", id: "Analisis Sentimen & Topik Ulasan Produk" },
       category: "NLP",
       featured: false,
       image: "",
       chart: "scatter",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Fine-tuned a transformer on 50K multilingual reviews (EN/ID) to surface sentiment and recurring complaints.",
+      summary: {
+        en: "Fine-tuned a transformer on 50K multilingual reviews (EN/ID) to surface sentiment and recurring complaints.",
+        id: "Fine-tuning model transformer pada 50 ribu ulasan multibahasa (EN/ID) untuk menemukan sentimen dan keluhan yang berulang.",
+      },
       impact: [
         { value: "91%", label: "F1 score" },
-        { value: "50K", label: "reviews analysed" },
+        { value: "50K", label: { en: "reviews analysed", id: "ulasan dianalisis" } },
       ],
-      problem: "Thousands of reviews per month were read manually, so insights arrived weeks late.",
-      approach: "Fine-tuned IndoBERT/XLM-R for sentiment, BERTopic for themes, deployed via FastAPI.",
-      result: "Automated weekly insight report; top 3 complaint topics escalated to product team.",
+      problem: {
+        en: "Thousands of reviews per month were read manually, so insights arrived weeks late.",
+        id: "Ribuan ulasan per bulan dibaca secara manual, sehingga insight baru didapat berminggu-minggu kemudian.",
+      },
+      approach: {
+        en: "Fine-tuned IndoBERT/XLM-R for sentiment, BERTopic for themes, deployed via FastAPI.",
+        id: "Fine-tuning IndoBERT/XLM-R untuk sentimen, BERTopic untuk tema, di-deploy lewat FastAPI.",
+      },
+      result: {
+        en: "Automated weekly insight report; top 3 complaint topics escalated to product team.",
+        id: "Laporan insight mingguan otomatis; 3 topik keluhan teratas diteruskan ke tim produk.",
+      },
       tags: ["PyTorch", "Hugging Face", "BERTopic", "FastAPI"],
       github: "https://github.com/yourname/review-nlp",
       demo: "",
     },
     {
-      title: "E-commerce Sales Dashboard",
+      title: { en: "E-commerce Sales Dashboard", id: "Dashboard Penjualan E-commerce" },
       category: "Analytics",
       featured: false,
       image: "",
       chart: "area",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Designed a self-serve KPI dashboard covering revenue, cohorts and funnel conversion for leadership.",
+      summary: {
+        en: "Designed a self-serve KPI dashboard covering revenue, cohorts and funnel conversion for leadership.",
+        id: "Merancang dashboard KPI self-service yang mencakup pendapatan, cohort, dan konversi funnel untuk manajemen.",
+      },
       impact: [
-        { value: "15+", label: "stakeholders using weekly" },
-        { value: "-70%", label: "ad-hoc data requests" },
+        { value: "15+", label: { en: "stakeholders using weekly", id: "stakeholder memakai tiap minggu" } },
+        { value: "-70%", label: { en: "ad-hoc data requests", id: "permintaan data ad-hoc" } },
       ],
-      problem: "Leadership requested the same numbers every week from the data team.",
-      approach: "Modelled data in SQL (star schema), built cohort and funnel views, designed dashboard in Tableau.",
-      result: "Single source of truth for KPIs; freed ~6 hours/week of analyst time.",
+      problem: {
+        en: "Leadership requested the same numbers every week from the data team.",
+        id: "Manajemen meminta angka yang sama setiap minggu ke tim data.",
+      },
+      approach: {
+        en: "Modelled data in SQL (star schema), built cohort and funnel views, designed dashboard in Tableau.",
+        id: "Memodelkan data di SQL (star schema), membuat view cohort dan funnel, merancang dashboard di Tableau.",
+      },
+      result: {
+        en: "Single source of truth for KPIs; freed ~6 hours/week of analyst time.",
+        id: "Satu sumber data KPI yang konsisten; menghemat ~6 jam/minggu waktu analis.",
+      },
       tags: ["SQL", "dbt", "Tableau", "BigQuery"],
       github: "",
       demo: "",
     },
     {
-      title: "Customer Repeat Order Prediction",
+      title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
       category: "Machine Learning",
       featured: false,
       image: "",
       chart: "bars",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Designed a self-serve KPI dashboard covering revenue, cohorts and funnel conversion for leadership.",
+      summary: {
+        en: "Designed a self-serve KPI dashboard covering revenue, cohorts and funnel conversion for leadership.",
+        id: "Merancang dashboard KPI self-service yang mencakup pendapatan, cohort, dan konversi funnel untuk manajemen.",
+      },
       impact: [
-        { value: "15+", label: "stakeholders using weekly" },
-        { value: "-70%", label: "ad-hoc data requests" },
+        { value: "15+", label: { en: "stakeholders using weekly", id: "stakeholder memakai tiap minggu" } },
+        { value: "-70%", label: { en: "ad-hoc data requests", id: "permintaan data ad-hoc" } },
       ],
-      problem: "Leadership requested the same numbers every week from the data team.",
-      approach: "Modelled data in SQL (star schema), built cohort and funnel views, designed dashboard in Tableau.",
-      result: "Single source of truth for KPIs; freed ~6 hours/week of analyst time.",
+      problem: {
+        en: "Leadership requested the same numbers every week from the data team.",
+        id: "Manajemen meminta angka yang sama setiap minggu ke tim data.",
+      },
+      approach: {
+        en: "Modelled data in SQL (star schema), built cohort and funnel views, designed dashboard in Tableau.",
+        id: "Memodelkan data di SQL (star schema), membuat view cohort dan funnel, merancang dashboard di Tableau.",
+      },
+      result: {
+        en: "Single source of truth for KPIs; freed ~6 hours/week of analyst time.",
+        id: "Satu sumber data KPI yang konsisten; menghemat ~6 jam/minggu waktu analis.",
+      },
       tags: ["SQL", "dbt", "Tableau", "BigQuery"],
       github: "https://github.com/nabilakarimaazka/customer-repeat-order-prediction",
       demo: "",
     },
     {
-      title: "A/B Test Analysis of Checkout Redesign",
+      title: { en: "A/B Test Analysis of Checkout Redesign", id: "Analisis A/B Test Desain Ulang Checkout" },
       category: "Machine Learning",
       featured: true,
       image: "",
       chart: "bars",
+      date: "",
+      logo: "",
       repo: "",
-      summary: "Designed and analysed an experiment to evaluate a new checkout flow, including power analysis and guardrail metrics.",
+      summary: {
+        en: "Designed and analysed an experiment to evaluate a new checkout flow, including power analysis and guardrail metrics.",
+        id: "Merancang dan menganalisis eksperimen untuk mengevaluasi alur checkout baru, termasuk power analysis dan guardrail metrics.",
+      },
       impact: [
-        { value: "+4.2%", label: "conversion (p < 0.01)" },
-        { value: "2 wks", label: "test duration" },
+        { value: "+4.2%", label: { en: "conversion (p < 0.01)", id: "konversi (p < 0,01)" } },
+        { value: "2 wks", label: { en: "test duration", id: "durasi tes" } },
       ],
-      problem: "Team wanted to ship a redesign without evidence it improved conversion.",
-      approach: "Power analysis for sample size, frequentist + Bayesian analysis, segment-level checks.",
-      result: "Recommended full rollout; documented a reusable experiment template.",
+      problem: {
+        en: "Team wanted to ship a redesign without evidence it improved conversion.",
+        id: "Tim ingin merilis desain baru tanpa bukti bahwa desain itu meningkatkan konversi.",
+      },
+      approach: {
+        en: "Power analysis for sample size, frequentist + Bayesian analysis, segment-level checks.",
+        id: "Power analysis untuk ukuran sampel, analisis frequentist + Bayesian, dan pengecekan per segmen.",
+      },
+      result: {
+        en: "Recommended full rollout; documented a reusable experiment template.",
+        id: "Merekomendasikan rilis penuh; mendokumentasikan template eksperimen yang bisa dipakai ulang.",
+      },
       tags: ["Python", "Statistics", "SciPy", "PyMC"],
       github: "https://github.com/nabilakarimaazka/customer-repeat-order-prediction",
       demo: "",
@@ -174,49 +266,139 @@ window.PORTFOLIO = {
   ],
 
   skills: [
-    { icon: "⌘", name: "Languages & Data", note: "Daily drivers", items: ["Python", "SQL", "R", "Pandas", "NumPy", "Polars"] },
-    { icon: "◆", name: "Machine Learning", note: "Modelling & evaluation", items: ["scikit-learn", "XGBoost", "LightGBM", "PyTorch", "Hugging Face", "SHAP"] },
-    { icon: "▲", name: "Statistics", note: "Inference & experimentation", items: ["A/B testing", "Hypothesis testing", "Regression", "Time series", "Bayesian"] },
-    { icon: "▦", name: "Visualization & BI", note: "Communicating results", items: ["Tableau", "Power BI", "Plotly", "Matplotlib", "Streamlit"] },
-    { icon: "☁", name: "Data Engineering & MLOps", note: "Getting to production", items: ["Airflow", "dbt", "Docker", "FastAPI", "MLflow", "Git"] },
-    { icon: "◎", name: "Cloud", note: "Platforms", items: ["BigQuery", "GCP", "AWS (S3, SageMaker)", "Snowflake"] },
+    { icon: "⌘", name: { en: "Languages & Data", id: "Bahasa & Data" }, note: { en: "Daily drivers", id: "Dipakai sehari-hari" }, items: ["Python", "SQL", "R", "Pandas", "NumPy", "Polars"] },
+    { icon: "◆", name: "Machine Learning", note: { en: "Modelling & evaluation", id: "Pemodelan & evaluasi" }, items: ["scikit-learn", "XGBoost", "LightGBM", "PyTorch", "Hugging Face", "SHAP"] },
+    { icon: "▲", name: { en: "Statistics", id: "Statistika" }, note: { en: "Inference & experimentation", id: "Inferensi & eksperimen" }, items: ["A/B testing", "Hypothesis testing", "Regression", "Time series", "Bayesian"] },
+    { icon: "▦", name: { en: "Visualization & BI", id: "Visualisasi & BI" }, note: { en: "Communicating results", id: "Menyampaikan hasil" }, items: ["Tableau", "Power BI", "Plotly", "Matplotlib", "Streamlit"] },
+    { icon: "☁", name: "Data Engineering & MLOps", note: { en: "Getting to production", id: "Sampai ke produksi" }, items: ["Airflow", "dbt", "Docker", "FastAPI", "MLflow", "Git"] },
+    { icon: "◎", name: "Cloud", note: { en: "Platforms", id: "Platform" }, items: ["BigQuery", "GCP", "AWS (S3, SageMaker)", "Snowflake"] },
   ],
 
+  /* type:   label kecil di kanan, contoh "Full-time", "Internship", "Contract"
+     logo:   opsional, logo perusahaan, contoh "images/logo-company.png"
+     org:    "Nama Perusahaan · Lokasi" (bagian setelah · tampil sebagai lokasi)
+     points: daftar pencapaian. Dua bahasa: { en: [ ... ], id: [ ... ] } */
   experience: [
     {
-      when: "2024 — Present",
+      when: { en: "2024 — Present", id: "2024 — Sekarang" },
       role: "Data Scientist",
       org: "Company Name · Remote",
-      points: [
-        "Built demand forecasting models used by 20+ planners across 3 regions.",
-        "Owned experimentation analysis for product team (10+ A/B tests).",
-        "Mentored 2 junior analysts on SQL and Python best practices.",
-      ],
+      type: "Full-time",
+      logo: "",
+      points: {
+        en: [
+          "Built demand forecasting models used by 20+ planners across 3 regions.",
+          "Owned experimentation analysis for product team (10+ A/B tests).",
+          "Mentored 2 junior analysts on SQL and Python best practices.",
+        ],
+        id: [
+          "Membangun model forecasting permintaan yang dipakai 20+ perencana di 3 wilayah.",
+          "Bertanggung jawab atas analisis eksperimen untuk tim produk (10+ A/B test).",
+          "Membimbing 2 analis junior tentang praktik terbaik SQL dan Python.",
+        ],
+      },
     },
     {
       when: "2022 — 2024",
       role: "Data Analyst",
       org: "Company Name · Jakarta",
-      points: [
-        "Designed KPI dashboards adopted by leadership; cut ad-hoc requests by 70%.",
-        "Automated weekly reporting pipeline with Python and SQL.",
-      ],
+      type: "Full-time",
+      logo: "",
+      points: {
+        en: [
+          "Designed KPI dashboards adopted by leadership; cut ad-hoc requests by 70%.",
+          "Automated weekly reporting pipeline with Python and SQL.",
+        ],
+        id: [
+          "Merancang dashboard KPI yang dipakai manajemen; mengurangi permintaan ad-hoc 70%.",
+          "Mengotomatiskan pipeline laporan mingguan dengan Python dan SQL.",
+        ],
+      },
     },
     {
       when: "2018 — 2022",
-      role: "B.Sc. Statistics / Computer Science",
+      role: { en: "B.Sc. Statistics / Computer Science", id: "S1 Statistika / Ilmu Komputer" },
       org: "University Name",
-      points: [
-        "Thesis: Time-series forecasting with machine learning.",
-        "GPA 3.7 / 4.0",
-      ],
+      type: { en: "Education", id: "Pendidikan" },
+      logo: "",
+      points: {
+        en: ["Thesis: Time-series forecasting with machine learning.", "GPA 3.7 / 4.0"],
+        id: ["Skripsi: Forecasting time-series dengan machine learning.", "IPK 3,7 / 4,0"],
+      },
     },
   ],
 
-  // Bagian "Built for remote teams"
+  /* SERTIFIKAT — kalau kosong [], bagian Certificates disembunyikan.
+     title:  nama sertifikat
+     issuer: penerbit, contoh "Coursera · Google", "Dicoding", "IBM"
+     date:   tanggal terbit, contoh "Mar 2025"
+     credentialId: opsional, nomor/ID kredensial
+     url:    link verifikasi sertifikat (Credly, Coursera, Dicoding, dll.)
+     logo:   opsional, logo penerbit, contoh "images/logo-google.png"
+     image:  opsional, gambar/screenshot sertifikat, contoh "images/cert-google.jpg"
+     skills: daftar skill yang dipelajari
+     ⚠ 3 contoh di bawah masih CONTOH — ganti dengan sertifikatmu sendiri. */
+  certificates: [
+    {
+      title: "Google Data Analytics Professional Certificate",
+      issuer: "Coursera · Google",
+      date: "Jan 2025",
+      credentialId: "",
+      url: "",
+      logo: "",
+      image: "",
+      skills: ["SQL", "R", "Tableau", "Data Cleaning"],
+    },
+    {
+      title: "IBM Data Science Professional Certificate",
+      issuer: "Coursera · IBM",
+      date: "Jun 2024",
+      credentialId: "",
+      url: "",
+      logo: "",
+      image: "",
+      skills: ["Python", "Machine Learning", "Pandas"],
+    },
+    {
+      title: { en: "Machine Learning Developer Path", id: "Alur Belajar Machine Learning Developer" },
+      issuer: "Dicoding",
+      date: "Feb 2024",
+      credentialId: "",
+      url: "",
+      logo: "",
+      image: "",
+      skills: ["TensorFlow", "Deep Learning", "NLP"],
+    },
+  ],
+
+  /* ARTIKEL — opsional. Kalau kosong [], bagian Articles disembunyikan.
+     Contoh:
+     { title: "How I built a churn model", date: "Oct 2026", source: "Medium",
+       url: "https://medium.com/...", image: "", summary: "..." },  */
+  articles: [],
+
+  // Kartu "cara saya bekerja" di bawah Skills
   why: [
-    { title: "Async-first communication", text: "Clear written updates, documented notebooks and decision logs so work keeps moving across time zones." },
-    { title: "Business before models", text: "I start from the metric that matters, then pick the simplest method that moves it — and explain results to non-technical stakeholders." },
-    { title: "Production mindset", text: "Reproducible pipelines, version control, testing and monitoring — not just a model that lives in a notebook." },
+    {
+      title: { en: "Async-first communication", id: "Komunikasi async" },
+      text: {
+        en: "Clear written updates, documented notebooks and decision logs so work keeps moving across time zones.",
+        id: "Update tertulis yang jelas, notebook terdokumentasi, dan catatan keputusan agar pekerjaan tetap jalan lintas zona waktu.",
+      },
+    },
+    {
+      title: { en: "Business before models", id: "Bisnis dulu, baru model" },
+      text: {
+        en: "I start from the metric that matters, then pick the simplest method that moves it — and explain results to non-technical stakeholders.",
+        id: "Saya mulai dari metrik yang penting, lalu memilih metode paling sederhana yang bisa menggerakkannya — dan menjelaskan hasilnya ke stakeholder non-teknis.",
+      },
+    },
+    {
+      title: { en: "Production mindset", id: "Pola pikir produksi" },
+      text: {
+        en: "Reproducible pipelines, version control, testing and monitoring — not just a model that lives in a notebook.",
+        id: "Pipeline yang reproducible, version control, testing, dan monitoring — bukan sekadar model yang hanya hidup di notebook.",
+      },
+    },
   ],
 };

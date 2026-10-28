@@ -3,186 +3,285 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name — Data Scientist</title>
+<title>Portfolio</title>
 <meta name="description" content="Data Scientist portfolio — machine learning, analytics and data products. Open to remote roles worldwide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- Load data.js fresh on every visit so updates show up right away (GitHub Pages caches files for 10 minutes) -->
 <script>document.write('<script src="data.js?v=' + Date.now() + '"><\/script>');</script>
-<script>document.documentElement.dataset.palette = (window.PORTFOLIO && window.PORTFOLIO.theme) || "brown";</script>
+<script>document.documentElement.dataset.palette = (window.PORTFOLIO && window.PORTFOLIO.theme) || "blue";</script>
 <style>
-  /* Color themes: set `theme` in data.js to brown, blue or pink */
-  :root { --radius: 16px; --accent-soft: color-mix(in srgb, var(--accent) 11%, transparent); }
-  :root { --bg: #faf6f1; --surface: #fffdfa; --surface-2: #f3ebe1; --text: #2b1d14; --muted: #6f5e50; --border: #eaded0; --accent: #8b5a2b; --accent-2: #c8874a; --on-accent: #ffffff; --good: #4d7c0f; --shadow: 0 1px 2px rgba(43,29,20,0.05), 0 10px 28px rgba(43,29,20,0.08); }
-  :root[data-palette="blue"] { --bg: #f5f8fd; --surface: #ffffff; --surface-2: #e9f0fa; --text: #0c1a2e; --muted: #52627a; --border: #dde6f2; --accent: #1d4ed8; --accent-2: #0891b2; --on-accent: #ffffff; --good: #059669; --shadow: 0 1px 2px rgba(12,26,46,0.05), 0 10px 28px rgba(12,26,46,0.08); }
-  :root[data-palette="pink"] { --bg: #fdf7f9; --surface: #ffffff; --surface-2: #fbeaf0; --text: #2a121d; --muted: #7b5867; --border: #f3dce5; --accent: #c2185b; --accent-2: #f08a5d; --on-accent: #ffffff; --good: #059669; --shadow: 0 1px 2px rgba(42,18,29,0.05), 0 10px 28px rgba(42,18,29,0.08); }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #15100c; --surface: #1f1813; --surface-2: #2a2019; --text: #f3e9df; --muted: #b8a592; --border: #3a2c21; --accent: #e0a46b; --accent-2: #f0c98f; --on-accent: #21160e; --good: #a3c56a; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
-    :root[data-palette="blue"]:not([data-theme="light"]) { --bg: #08101d; --surface: #0f1a2b; --surface-2: #16233a; --text: #e6eef9; --muted: #93a5bf; --border: #1f2e47; --accent: #60a5fa; --accent-2: #22d3ee; --on-accent: #06111f; --good: #34d399; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
-    :root[data-palette="pink"]:not([data-theme="light"]) { --bg: #170c11; --surface: #22131a; --surface-2: #2e1a23; --text: #fbe9f0; --muted: #c39aab; --border: #3d2230; --accent: #f472b6; --accent-2: #fdba74; --on-accent: #2a0d1a; --good: #34d399; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
-  }
-  :root[data-theme="dark"] { --bg: #15100c; --surface: #1f1813; --surface-2: #2a2019; --text: #f3e9df; --muted: #b8a592; --border: #3a2c21; --accent: #e0a46b; --accent-2: #f0c98f; --on-accent: #21160e; --good: #a3c56a; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
-  :root[data-palette="blue"][data-theme="dark"] { --bg: #08101d; --surface: #0f1a2b; --surface-2: #16233a; --text: #e6eef9; --muted: #93a5bf; --border: #1f2e47; --accent: #60a5fa; --accent-2: #22d3ee; --on-accent: #06111f; --good: #34d399; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
-  :root[data-palette="pink"][data-theme="dark"] { --bg: #170c11; --surface: #22131a; --surface-2: #2e1a23; --text: #fbe9f0; --muted: #c39aab; --border: #3d2230; --accent: #f472b6; --accent-2: #fdba74; --on-accent: #2a0d1a; --good: #34d399; --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35); }
+  /* Color themes: set `theme` in data.js to blue, coral, pink or brown */
+  :root { --radius: 22px; --accent-soft: color-mix(in srgb, var(--accent) 10%, transparent); }
+  :root { --bg: #ffffff; --surface: #f8f8fa; --surface-2: #f0f0f4; --text: #18181b; --muted: #63636e; --border: #ececf1;
+          --accent: #db2777; --accent-2: #7c3aed; --on-accent: #ffffff; --good: #16a34a;
+          --hero-a: #fde7ef; --hero-b: #f3f0fa; --shadow: 0 1px 2px rgba(24,24,27,.04), 0 12px 32px rgba(24,24,27,.07); }
+  :root[data-palette="blue"]  { --surface: #f8fafc; --surface-2: #f1f5f9; --border: #e2e8f0; --text: #0f172a; --muted: #475569;
+                                --accent: #1d4ed8; --accent-2: #0e7490; --hero-a: #e7eefc; --hero-b: #f1f5f9;
+                                --shadow: 0 1px 2px rgba(15,23,42,.04), 0 12px 32px rgba(15,23,42,.08); }
+  :root[data-palette="coral"] { --accent: #f2654f; --accent-2: #6d5bb5; --hero-a: #fde8e3; --hero-b: #f1eff6; }
+  :root[data-palette="brown"] { --bg: #fffdfa; --surface: #faf6f1; --surface-2: #f3ebe1; --border: #ede3d7; --text: #2b1d14; --muted: #6f5e50;
+                                --accent: #9a5b2e; --accent-2: #c8874a; --hero-a: #f6e8da; --hero-b: #f7f2ec; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0d0d10; --surface: #16161b; --surface-2: #1f1f26; --text: #f4f4f6; --muted: #a1a1ad; --border: #26262e;
+    --on-accent: #ffffff; --good: #4ade80; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+    --hero-a: color-mix(in srgb, var(--accent) 16%, #16161b); --hero-b: #16161b; } }
+  :root[data-theme="dark"] {
+    --bg: #0d0d10; --surface: #16161b; --surface-2: #1f1f26; --text: #f4f4f6; --muted: #a1a1ad; --border: #26262e;
+    --on-accent: #ffffff; --good: #4ade80; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+    --hero-a: color-mix(in srgb, var(--accent) 16%, #16161b); --hero-b: #16161b; }
+  @media (prefers-color-scheme: dark) { :root[data-palette="blue"]:not([data-theme="light"]) {
+    --bg: #0b1120; --surface: #111a2e; --surface-2: #17223a; --border: #1f2a40; --text: #f1f5f9; --muted: #94a3b8;
+    --accent: #60a5fa; --accent-2: #22d3ee; --on-accent: #0b1120; --hero-a: #13254a; --hero-b: #111a2e; } }
+  :root[data-palette="blue"][data-theme="dark"] {
+    --bg: #0b1120; --surface: #111a2e; --surface-2: #17223a; --border: #1f2a40; --text: #f1f5f9; --muted: #94a3b8;
+    --accent: #60a5fa; --accent-2: #22d3ee; --on-accent: #0b1120; --hero-a: #13254a; --hero-b: #111a2e; }
+  @media (prefers-color-scheme: dark) { :root[data-palette="coral"]:not([data-theme="light"]) { --accent: #ff7a63; --accent-2: #a594e8; } }
+  :root[data-palette="coral"][data-theme="dark"] { --accent: #ff7a63; --accent-2: #a594e8; }
+  @media (prefers-color-scheme: dark) { :root[data-palette="pink"]:not([data-theme="light"]) { --accent: #f472b6; --accent-2: #a78bfa; } }
+  :root[data-palette="pink"][data-theme="dark"] { --accent: #f472b6; --accent-2: #a78bfa; }
+  @media (prefers-color-scheme: dark) { :root[data-palette="brown"]:not([data-theme="light"]) { --accent: #e0a46b; --accent-2: #f0c98f; --on-accent: #21160e; } }
+  :root[data-palette="brown"][data-theme="dark"] { --accent: #e0a46b; --accent-2: #f0c98f; --on-accent: #21160e; }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-  body { font-family: "Plus Jakarta Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-decoration: none; }
-  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  h1, h2, h3, h4, .display { font-family: Poppins, Inter, sans-serif; letter-spacing: -.02em; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  [hidden] { display: none !important; }
 
-  /* Nav */
-  nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .logo { font-weight: 800; letter-spacing: -.02em; display: flex; align-items: center; gap: 10px; }
-  .logo-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--on-accent); display: grid; place-items: center; font-size: 14px; }
-  .nav-links { display: flex; gap: 28px; font-size: 14.5px; color: var(--muted); font-weight: 500; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-right { display: flex; gap: 10px; align-items: center; }
-  .icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); display: grid; place-items: center; cursor: pointer; }
+  /* ---------- Nav ---------- */
+  nav { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(14px); }
+  nav .wrap { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: Poppins, sans-serif; font-weight: 600; font-size: 17px; white-space: nowrap; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 10px; overflow: hidden; display: grid; place-items: center; font-size: 13px; font-weight: 700; flex: none;
+                background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; }
+  .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+  .nav-links { display: flex; gap: 26px; font-size: 15px; color: var(--muted); font-weight: 500; }
+  .nav-links a { transition: color .15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-right { display: flex; gap: 8px; align-items: center; }
+  .icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+              display: grid; place-items: center; cursor: pointer; }
   .icon-btn svg { width: 18px; height: 18px; }
+  .lang { display: inline-flex; height: 38px; padding: 3px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); }
+  .lang button { border: 0; background: transparent; color: var(--muted); font: 600 12.5px Inter, sans-serif; padding: 0 10px; border-radius: 7px; cursor: pointer; }
+  .lang button.on { background: var(--accent); color: var(--on-accent); }
+  .menu-btn { display: none; }
+  .mobile-menu { display: none; }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 11px; font-weight: 600; font-size: 14.5px; border: 1px solid transparent; cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s; }
-  .btn svg { width: 16px; height: 16px; }
-  .btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 35%, transparent); }
-  .btn-primary:hover { transform: translateY(-1px); }
-  .btn-ghost { background: var(--surface); border-color: var(--border); color: var(--text); }
-  .btn-ghost:hover { border-color: var(--accent); }
-  .btn-sm { padding: 8px 14px; font-size: 13.5px; }
+  /* ---------- Buttons & chips ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 14.5px;
+         border: 1.5px solid transparent; cursor: pointer; font-family: inherit; transition: transform .15s, background .15s, color .15s; }
+  .btn svg { width: 15px; height: 15px; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: var(--on-accent); }
+  .btn-outline { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); background: transparent; }
+  .btn-outline:hover { background: var(--accent-soft); }
+  .btn-sm { padding: 7px 14px; font-size: 13.5px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+  .chip { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 999px;
+          background: var(--bg); border: 1px solid var(--border); }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .chip:nth-child(3n+2) i { background: var(--accent-2); }
+  .chip:nth-child(3n) i { background: var(--good); }
 
-  /* Hero */
-  .hero { padding: 88px 0 72px; position: relative; overflow: hidden; }
-  .hero::before { content: ""; position: absolute; inset: -40% -10% auto auto; width: 620px; height: 620px; background: radial-gradient(circle, var(--accent-soft), transparent 65%); pointer-events: none; }
-  .hero::after { content: ""; position: absolute; inset: auto auto -45% -15%; width: 520px; height: 520px; background: radial-gradient(circle, color-mix(in srgb, var(--accent-2) 12%, transparent), transparent 65%); pointer-events: none; }
-  .avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 18px; border: 3px solid var(--surface); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
-  .avatar[hidden] { display: none; }
-  .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 56px; align-items: center; position: relative; }
-  .status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 10px; border-radius: 99px; background: var(--surface); border: 1px solid var(--border); font-size: 13px; font-weight: 600; color: var(--muted); }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 20%, transparent); animation: pulse 2s infinite; }
-  @keyframes pulse { 50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--good) 5%, transparent); } }
-  h1 { font-size: clamp(38px, 5.6vw, 60px); line-height: 1.06; letter-spacing: -.035em; font-weight: 800; margin: 22px 0 18px; }
-  h1 .grad { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .lead { font-size: 18px; color: var(--muted); max-width: 560px; }
-  .hero-cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
-  .hero-meta { display: flex; gap: 22px; margin-top: 30px; color: var(--muted); font-size: 14px; flex-wrap: wrap; }
-  .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
-  .hero-meta svg { width: 16px; height: 16px; }
+  /* ---------- Hero bento ---------- */
+  .hero { padding: 44px 0 24px; }
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+  .hero-main { grid-column: span 2; padding: 40px 40px 36px; background: linear-gradient(135deg, var(--hero-a), var(--hero-b) 70%); }
+  .hero-main h1 { font-size: clamp(44px, 7vw, 76px); line-height: 1.02; font-weight: 800; margin: 12px 0 22px; }
+  .hero-main p { color: var(--muted); font-size: 17px; max-width: 560px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 26px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 22%, transparent); }
+  .photo-card { overflow: hidden; min-height: 320px; position: relative; display: grid; place-items: center;
+                background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 20%, var(--surface)), color-mix(in srgb, var(--accent-2) 20%, var(--surface))); }
+  .photo-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+  .photo-initials { font-family: Poppins, sans-serif; font-size: 96px; font-weight: 800; color: color-mix(in srgb, var(--accent) 75%, var(--text)); }
+  .photo-caption { position: absolute; left: 14px; bottom: 14px; right: 14px; display: flex; gap: 8px; flex-wrap: wrap; z-index: 1; }
+  .photo-caption span { font-size: 12.5px; font-weight: 500; padding: 5px 11px; border-radius: 999px; color: var(--text);
+                        background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(6px); }
+  .stat { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+  .stat .v { font-family: Poppins, sans-serif; font-size: clamp(44px, 5.5vw, 64px); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--accent); }
+  .stat.alt .v { color: var(--accent-2); }
+  .stat .l { color: var(--muted); font-size: 15px; font-weight: 500; }
+  .tech { padding: 24px 26px; }
+  .tech.wide { grid-column: span 2; }
+  .tech .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 
-  .hero-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); padding: 22px; }
-  .hero-card-head { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
-  .hero-card-head b { color: var(--text); font-size: 14px; }
-  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-  .kpi { background: var(--surface-2); border-radius: 12px; padding: 14px; }
-  .kpi .v { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
-  .kpi .l { font-size: 12.5px; color: var(--muted); }
+  /* ---------- Sections ---------- */
+  section { padding: 88px 0; }
+  section.tint { background: linear-gradient(135deg, var(--hero-a), var(--hero-b) 60%, var(--bg)); }
+  .sec-head { margin-bottom: 34px; }
+  .sec-head h2 { font-size: clamp(30px, 4vw, 40px); font-weight: 700; margin: 6px 0 10px; }
+  .sec-head p { color: var(--muted); max-width: 580px; font-size: 16px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .filter { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+            font: 500 13.5px Inter, sans-serif; cursor: pointer; }
+  .filter.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
-  /* Sections */
-  section { padding: 80px 0; }
-  .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); font-weight: 500; letter-spacing: .02em; }
-  h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -.03em; line-height: 1.15; margin: 8px 0 12px; font-weight: 800; }
-  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
-  .sec-head p { color: var(--muted); max-width: 520px; }
+  /* ---------- Projects ---------- */
+  .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pcard { display: flex; flex-direction: column; overflow: hidden; cursor: pointer; transition: transform .2s, box-shadow .2s; text-align: left; font: inherit; color: inherit; }
+  .pcard:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .pcover { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface-2); }
+  .pcover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pcover svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .cover-title { position: absolute; left: 24px; top: 20px; right: 24px; color: #fff; font-family: Poppins, sans-serif; z-index: 1; }
+  .cover-title b { display: block; font-size: 32px; line-height: 1.15; font-weight: 700; }
+  .cover-title span { font-size: 14px; opacity: .85; }
+  .cover-cat { position: absolute; left: 14px; top: 14px; font-size: 12px; font-weight: 600; padding: 4px 11px; border-radius: 999px;
+               background: rgba(255,255,255,.9); color: #0f172a; }
+  .pbody { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .phead { display: flex; gap: 12px; align-items: center; }
+  .plogo { width: 36px; height: 36px; border-radius: 9px; flex: none; overflow: hidden; display: grid; place-items: center; font: 700 13px Poppins, sans-serif;
+           background: var(--accent-soft); color: var(--accent); }
+  .plogo img { width: 100%; height: 100%; object-fit: cover; }
+  .phead h3 { font-size: 16.5px; font-weight: 600; line-height: 1.3; }
+  .phead small { color: var(--muted); font-size: 13px; }
+  .pbody .summary { color: var(--muted); font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pfoot { margin-top: auto; padding-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .metric { font-size: 13px; color: var(--muted); }
+  .metric b { font-family: Poppins, sans-serif; color: var(--text); font-size: 15px; margin-right: 4px; }
+  .pcard.featured { grid-column: span 2; }
+  .pcard.featured .pcover { aspect-ratio: auto; height: 300px; }
+  .gh { font-size: 12.5px; color: var(--good); font-weight: 600; }
+  .more { margin-top: 28px; }
 
-  /* Stats strip */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
-  .stat { padding: 26px 24px; border-right: 1px solid var(--border); }
-  .stat:last-child { border-right: none; }
-  .stat .v { font-size: 32px; font-weight: 800; letter-spacing: -.03em; }
-  .stat .l { color: var(--muted); font-size: 14px; }
+  /* ---------- Project modal ---------- */
+  dialog { border: none; border-radius: 24px; padding: 0; width: min(760px, calc(100% - 32px)); max-height: calc(100vh - 48px);
+           background: var(--bg); color: var(--text); box-shadow: 0 30px 80px rgba(0,0,0,.35); margin: auto; }
+  dialog::backdrop { background: rgba(10,10,14,.55); backdrop-filter: blur(4px); }
+  .mcover { aspect-ratio: 16 / 7; position: relative; background: var(--surface-2); overflow: hidden; }
+  .mcover img { width: 100%; height: 100%; object-fit: cover; }
+  .mcover svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .mclose { position: absolute; top: 14px; right: 14px; z-index: 2; background: color-mix(in srgb, var(--bg) 85%, transparent); }
+  .mbody { padding: 26px 30px 30px; display: grid; gap: 18px; }
+  .mbody h3 { font-size: 26px; line-height: 1.2; }
+  .mmeta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .impact { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .impact div { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+  .impact b { display: block; font-family: Poppins, sans-serif; font-size: 22px; color: var(--accent); line-height: 1.2; }
+  .impact span { font-size: 13px; color: var(--muted); }
+  .case { display: grid; gap: 14px; }
+  .case h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-family: Inter, sans-serif; font-weight: 600; }
+  .case p { color: var(--muted); font-size: 15px; }
+  .mlinks { display: flex; gap: 10px; flex-wrap: wrap; }
 
-  /* Projects */
-  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-  .chip { padding: 8px 14px; border-radius: 99px; border: 1px solid var(--border); background: var(--surface); font-size: 13.5px; font-weight: 600; color: var(--muted); cursor: pointer; font-family: inherit; }
-  .chip.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s, border-color .2s; }
-  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
-  .card-visual { height: 170px; background: var(--surface-2); position: relative; border-bottom: 1px solid var(--border); }
-  .card-visual svg, .card-visual img { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .card-visual img { object-fit: cover; }
-  .card-cat { position: absolute; top: 14px; left: 14px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--surface); border: 1px solid var(--border); }
-  .card-body { padding: 22px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-  .card h3 { font-size: 19px; letter-spacing: -.02em; line-height: 1.3; }
-  .card .summary { color: var(--muted); font-size: 14.5px; }
-  .impact { display: flex; gap: 10px; flex-wrap: wrap; }
-  .impact div { background: var(--accent-soft); border-radius: 10px; padding: 8px 12px; }
-  .impact b { display: block; font-size: 17px; color: var(--accent); letter-spacing: -.02em; }
-  .impact span { font-size: 12px; color: var(--muted); }
-  .gh-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 12.5px; color: var(--muted); }
-  .gh-meta a { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 99px; background: color-mix(in srgb, var(--good) 12%, transparent); color: var(--good); font-weight: 600; }
-  .gh-meta a:hover { text-decoration: underline; }
-  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag { font-family: "JetBrains Mono", monospace; font-size: 11.5px; padding: 3px 8px; border-radius: 6px; background: var(--surface-2); color: var(--muted); }
-  .card-foot { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
-  .featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; }
-  .featured .card-visual { height: auto; min-height: 280px; border-bottom: none; border-right: 1px solid var(--border); }
-  .featured h3 { font-size: 24px; }
-  details.psr { border-top: 1px dashed var(--border); padding-top: 12px; font-size: 14px; }
-  details.psr summary { cursor: pointer; font-weight: 600; color: var(--accent); list-style: none; }
-  details.psr summary::-webkit-details-marker { display: none; }
-  details.psr dl { margin-top: 10px; display: grid; gap: 8px; }
-  details.psr dt { font-weight: 700; font-size: 13px; }
-  details.psr dd { color: var(--muted); }
+  /* ---------- Experience timeline ---------- */
+  .timeline { display: grid; gap: 26px; }
+  .titem { display: grid; grid-template-columns: 52px 1fr; gap: 22px; position: relative; }
+  .titem:not(:last-child)::before { content: ""; position: absolute; left: 25px; top: 56px; bottom: -26px; width: 2px; background: var(--border); }
+  .tlogo { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); box-shadow: var(--shadow);
+           display: grid; place-items: center; position: relative; font: 700 15px Poppins, sans-serif; color: var(--accent); }
+  .tlogo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .tlogo::after { content: ""; position: absolute; top: -2px; right: -2px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+  .titem:nth-child(2n) .tlogo::after { background: var(--good); }
+  .titem:nth-child(3n) .tlogo::after { background: var(--accent-2); }
+  .tcard { padding: 24px 28px; background: color-mix(in srgb, var(--bg) 70%, var(--surface)); }
+  .ttop { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .torg { color: var(--accent); font-weight: 600; font-size: 15.5px; }
+  .badge { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent); color: var(--on-accent); white-space: nowrap; }
+  .tcard h3 { font-size: 22px; font-weight: 600; margin: 16px 0 6px; }
+  .twhen { display: flex; gap: 16px; color: var(--muted); font-size: 13.5px; flex-wrap: wrap; }
+  .twhen span { display: inline-flex; align-items: center; gap: 6px; }
+  .twhen svg { width: 14px; height: 14px; }
+  .tcard h5 { font-size: 14px; margin: 16px 0 8px; font-family: Inter, sans-serif; }
+  .tcard ul { list-style: none; display: grid; gap: 6px; }
+  .tcard li { position: relative; padding-left: 16px; color: var(--muted); font-size: 14.5px; }
+  .tcard li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-  /* Skills */
-  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .skill-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-  .skill-box h4 { font-size: 16px; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
-  .skill-box h4 i { width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-style: normal; font-size: 15px; }
-  .skill-box p { color: var(--muted); font-size: 13.5px; margin-bottom: 14px; }
-  .skill-box .tags .tag { font-size: 12.5px; padding: 5px 10px; }
-
-  /* Experience */
-  .timeline { display: grid; gap: 16px; }
-  .exp { display: grid; grid-template-columns: 200px 1fr; gap: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-  .exp .when { color: var(--muted); font-size: 14px; }
-  .exp h4 { font-size: 17px; }
-  .exp .org { color: var(--accent); font-weight: 600; font-size: 14.5px; }
-  .exp ul { margin: 10px 0 0 18px; color: var(--muted); font-size: 14.5px; display: grid; gap: 4px; }
-
-  /* Why me */
-  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .why div { padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
-  .why h4 { margin-bottom: 6px; }
+  /* ---------- Skills & why ---------- */
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .skill { padding: 24px; }
+  .skill h4 { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; }
+  .skill h4 i { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-style: normal; background: var(--accent-soft); color: var(--accent); }
+  .skill p { color: var(--muted); font-size: 13.5px; margin: 4px 0 14px; }
+  .skill .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .why .card { padding: 24px; }
+  .why h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
   .why p { color: var(--muted); font-size: 14.5px; }
 
-  /* Contact */
-  .contact { background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent-2) 80%, var(--accent))); color: var(--on-accent); border-radius: 24px; padding: 56px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
-  .contact h2 { color: inherit; }
-  .contact p { opacity: .88; }
-  .contact-links { display: grid; gap: 10px; }
-  .contact-links a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px; background: color-mix(in srgb, var(--on-accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--on-accent) 22%, transparent); font-weight: 600; transition: background .15s; }
-  .contact-links a:hover { background: color-mix(in srgb, var(--on-accent) 22%, transparent); }
-  .contact-links svg { width: 18px; height: 18px; flex: none; }
-  .contact-links small { margin-left: auto; opacity: .75; font-weight: 500; }
+  /* ---------- Certificates ---------- */
+  .certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .cert { display: flex; flex-direction: column; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .cert:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .cert-img { aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .cert-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cert-body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .cert-head { display: flex; gap: 14px; align-items: flex-start; }
+  .cert-logo { width: 46px; height: 46px; border-radius: 12px; flex: none; overflow: hidden; display: grid; place-items: center;
+               background: var(--accent-soft); color: var(--accent); }
+  .cert-logo img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+  .cert-logo svg { width: 24px; height: 24px; }
+  .cert h3 { font-size: 16px; font-weight: 600; line-height: 1.35; }
+  .cert-meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .cert-id { font-size: 12px; color: var(--muted); }
+  .cert-foot { margin-top: auto; padding-top: 4px; }
 
-  footer { padding: 36px 0 48px; color: var(--muted); font-size: 13.5px; }
+  /* ---------- Articles ---------- */
+  .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .acard { overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+  .acard:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .acard .pcover { aspect-ratio: 16 / 9; }
+  .acard .pbody h3 { font-size: 16.5px; line-height: 1.35; }
+  .acard small { color: var(--muted); font-size: 13px; }
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 56px; border-radius: 28px; color: #fff; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+             background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 88%, #000), color-mix(in srgb, var(--accent-2) 80%, #000)); }
+  .contact .eyebrow { color: inherit; opacity: .8; }
+  .contact h2 { font-size: clamp(30px, 4vw, 42px); margin: 6px 0 12px; line-height: 1.15; }
+  .contact p { opacity: .9; }
+  .clinks { display: grid; gap: 10px; }
+  .clinks a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; font-weight: 600;
+              background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); }
+  .clinks a:hover { background: rgba(255,255,255,.22); }
+  .clinks svg { width: 18px; height: 18px; flex: none; }
+  .clinks small { margin-left: auto; opacity: .8; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+
+  footer { padding: 40px 0 48px; color: var(--muted); font-size: 13.5px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s, transform .6s; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-  @media (max-width: 900px) {
-    .hero-grid, .featured, .contact { grid-template-columns: 1fr; }
-    .featured .card-visual { min-height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
-    .projects, .skills, .why { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: 1fr 1fr; }
-    .stat:nth-child(2) { border-right: none; }
-    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
-    .exp { grid-template-columns: 1fr; gap: 6px; }
+  @media (max-width: 1080px) {
     .nav-links { display: none; }
+    .menu-btn { display: grid; }
+    .mobile-menu { position: fixed; inset: 68px 0 auto 0; z-index: 29; background: var(--bg); border-bottom: 1px solid var(--border); padding: 8px 24px 18px; }
+    .mobile-menu.open { display: grid; }
+    .mobile-menu a { padding: 12px 0; font-weight: 500; border-bottom: 1px solid var(--border); }
   }
-  @media (max-width: 560px) {
+  @media (max-width: 920px) {
+    .bento, .projects, .skills, .why, .articles, .certs { grid-template-columns: 1fr 1fr; }
+    .hero-main, .tech, .tech.wide, .pcard.featured { grid-column: 1 / -1; }
+    .photo-card { min-height: 300px; }
+    .contact { grid-template-columns: 1fr; padding: 40px 32px; }
+  }
+  @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
-    .hero { padding: 56px 0 48px; }
-    section { padding: 56px 0; }
-    .contact { padding: 32px 22px; }
+    .bento, .projects, .skills, .why, .articles, .certs { grid-template-columns: 1fr; }
+    .hero-main { padding: 30px 24px; }
+    .photo-card { min-height: 300px; }
+    .pcard.featured .pcover { height: 220px; }
+    .cover-title b { font-size: 24px; }
+    .titem { grid-template-columns: 1fr; }
+    .titem:not(:last-child)::before, .tlogo { display: none; }
+    .tcard { padding: 20px; }
+    .contact { padding: 30px 20px; }
+    section { padding: 64px 0; }
+    .mbody { padding: 22px 20px 24px; }
     .nav-right .btn { display: none; }
-    .stat { padding: 18px 16px; }
-    .stat .v { font-size: 26px; }
+    .brand span:last-child { display: none; }
   }
 </style>
 </head>
@@ -190,112 +289,128 @@
 
 <nav>
   <div class="wrap">
-    <a href="#top" class="logo"><span class="logo-mark mono" data-p="initials"></span><span data-p="name"></span></a>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+    <a href="#top" class="brand"><span class="brand-mark" id="brandMark"></span><span data-p="name"></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#top" class="active" data-t="navHome"></a>
+      <a href="#projects" data-t="navProjects"></a>
+      <a href="#experience" data-t="navExperience"></a>
+      <a href="#certificates" data-t="navCerts" data-certs-link></a>
+      <a href="#skills" data-t="navSkills"></a>
+      <a href="#articles" data-t="navArticles" data-articles-link></a>
+      <a href="#contact" data-t="navContact"></a>
     </div>
     <div class="nav-right">
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+      <a class="btn btn-primary btn-sm" data-resume href="#contact" data-t="resume"></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button><button type="button" data-lang="id">ID</button>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn-primary btn-sm" data-resume href="#" target="_blank" rel="noopener">Resume</a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu"></div>
 
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <img class="avatar" id="avatar" alt="" hidden>
-      <span class="status"><span class="dot"></span><span data-p="status"></span></span>
-      <h1><span data-p="headline"></span> <span class="grad" data-p="headlineHighlight"></span></h1>
-      <p class="lead" data-p="intro"></p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#projects">View projects
+  <div class="wrap bento">
+    <div class="card hero-main reveal">
+      <div class="eyebrow" data-p="greeting"></div>
+      <h1 data-p="name"></h1>
+      <p data-p="intro"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects"><span data-t="viewProjects"></span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
-      <div class="hero-meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-p="location"></span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-p="availability"></span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg><span data-p="language"></span></span>
+        <a class="btn btn-outline" href="#contact" data-t="getInTouch"></a>
+        <span class="status"><span class="dot"></span><span data-p="status"></span></span>
       </div>
     </div>
-
-    <div class="hero-card reveal">
-      <div class="hero-card-head"><b>model_performance.ipynb</b><span class="mono">● live</span></div>
-      <svg id="heroChart" viewBox="0 0 360 150" width="100%" role="img" aria-label="Illustrative chart: forecast vs actual"></svg>
-      <div class="kpis" id="heroKpis"></div>
+    <div class="card photo-card reveal" id="photoCard">
+      <span class="photo-initials" data-p="initials"></span>
+      <div class="photo-caption"><span data-p="role"></span><span data-p="location"></span></div>
+    </div>
+    <div id="heroStats" style="display:contents"></div>
+    <div class="card tech reveal" id="techCard">
+      <div class="eyebrow" data-t="techStack"></div>
+      <div class="chips" id="techChips"></div>
     </div>
   </div>
 </header>
 
-<div class="wrap reveal">
-  <div class="stats" id="stats"></div>
-</div>
-
 <section id="projects">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">// selected work</div>
-        <h2>Projects with measurable impact</h2>
-        <p>Each project shows the business problem, my approach and the outcome — click “Case study” for details.</p>
-      </div>
-      <div class="filters" id="filters"></div>
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-t="projEyebrow"></div>
+      <h2 data-t="projTitle"></h2>
+      <p data-t="projDesc"></p>
+      <div class="toolbar" id="filters"></div>
     </div>
     <div class="projects" id="projectGrid"></div>
+    <div class="more"><button class="btn btn-outline" id="moreBtn" hidden></button></div>
   </div>
 </section>
 
-<section id="skills" style="padding-top:20px">
+<section id="experience" class="tint">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">// toolkit</div>
-        <h2>Skills &amp; tech stack</h2>
-        <p>Tools I use day to day, from exploration to deployment.</p>
-      </div>
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-t="expEyebrow"></div>
+      <h2 data-t="expTitle"></h2>
+      <p data-t="expDesc"></p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<section id="certificates" hidden>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-t="certEyebrow"></div>
+      <h2 data-t="certTitle"></h2>
+      <p data-t="certDesc"></p>
+    </div>
+    <div class="certs" id="certGrid"></div>
+  </div>
+</section>
+
+<section id="skills" class="tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-t="skillEyebrow"></div>
+      <h2 data-t="skillTitle"></h2>
+      <p data-t="skillDesc"></p>
     </div>
     <div class="skills" id="skillGrid"></div>
-  </div>
-</section>
-
-<section id="experience" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">// experience</div>
-        <h2>Where I've worked</h2>
-      </div>
-    </div>
-    <div class="timeline" id="expList"></div>
-  </div>
-</section>
-
-<section style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head"><div><div class="eyebrow">// working with me</div><h2>Built for remote teams</h2></div></div>
     <div class="why" id="why"></div>
   </div>
 </section>
 
-<section id="contact" style="padding-top:20px">
+<section id="articles" hidden>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-t="artEyebrow"></div>
+      <h2 data-t="artTitle"></h2>
+      <p data-t="artDesc"></p>
+    </div>
+    <div class="articles" id="articleGrid"></div>
+  </div>
+</section>
+
+<section id="contact">
   <div class="wrap">
     <div class="contact reveal">
       <div>
-        <div class="eyebrow" style="color:inherit;opacity:.8">// let's talk</div>
-        <h2>Hiring a data scientist?</h2>
-        <p>I'm currently open to remote full-time and contract roles. I usually reply within 24 hours.</p>
+        <div class="eyebrow" data-t="contactEyebrow"></div>
+        <h2 data-t="contactTitle"></h2>
+        <p data-t="contactDesc"></p>
       </div>
-      <div class="contact-links">
+      <div class="clinks">
         <a id="lnkEmail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email<small data-p="email"></small></a>
         <a id="lnkLinkedin" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>LinkedIn<small id="txtLinkedin"></small></a>
         <a id="lnkGithub" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub<small id="txtGithub"></small></a>
-        <a data-resume href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 18v-6M9 15l3 3 3-3"/></svg>Resume (PDF)<small>1 page</small></a>
+        <a data-resume href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 18v-6M9 15l3 3 3-3"/></svg>Resume (PDF)<small id="txtResume"></small></a>
       </div>
     </div>
   </div>
@@ -304,9 +419,11 @@
 <footer>
   <div class="wrap">
     <span>© <span id="yr"></span> <span data-p="name"></span> · <span data-p="role"></span></span>
-    <span class="mono">Built with HTML, CSS &amp; a little JS</span>
+    <span data-p="location"></span>
   </div>
 </footer>
+
+<dialog id="modal" aria-label="Project details"></dialog>
 
 <script>
 /* All content lives in data.js (window.PORTFOLIO). */
@@ -315,211 +432,104 @@ const DATA = window.PORTFOLIO || {};
 if (!window.PORTFOLIO) document.body.insertAdjacentHTML("afterbegin",
   '<div style="position:sticky;top:0;z-index:99;padding:14px 20px;background:#b91c1c;color:#fff;font-weight:600;text-align:center">' +
   '⚠ data.js tidak bisa dibaca. Cek koma atau tanda kutip yang hilang, dan tulis true/false dengan huruf kecil.</div>');
-let PROJECTS = [], SKILLS = [], EXPERIENCE = [], PROFILE = {};
+
+// ---------- Language ----------
+const UI = {
+  en: { navHome: "Home", navProjects: "Projects", navExperience: "Experience", navCerts: "Certificates", navSkills: "Skills", navArticles: "Articles", navContact: "Contact",
+        resume: "Resume", viewProjects: "View projects", getInTouch: "Get in touch", techStack: "Tech stack",
+        projEyebrow: "Selected work", projTitle: "Projects",
+        projDesc: "A selection of data science projects — each with the business problem, my approach and the measurable result. Click a card for the full case study.",
+        all: "All", details: "Details", more: "Show more projects", fewer: "Show fewer projects",
+        problem: "Problem", approach: "Approach", result: "Result", viewCode: "View code", liveDemo: "Live demo", release: "Release",
+        expEyebrow: "Career", expTitle: "Experience", expDesc: "My professional journey in data science and analytics.", achievements: "Key achievements:",
+        skillEyebrow: "Toolkit", skillTitle: "Skills", skillDesc: "Tools I use day to day, from exploration to production — and how I work with remote teams.",
+        certEyebrow: "Credentials", certTitle: "Certificates", certDesc: "Courses and certifications that back up my data science skills.",
+        credential: "Credential ID", viewCredential: "View credential",
+        artEyebrow: "Writing", artTitle: "Articles", artDesc: "Notes and write-ups about data science, analytics and machine learning.",
+        contactEyebrow: "Let's talk", contactTitle: "Hiring a data scientist?",
+        contactDesc: "I'm open to remote full-time and contract roles. I usually reply within 24 hours.",
+        download: "Download", onRequest: "On request", locale: "en-US" },
+  id: { navHome: "Beranda", navProjects: "Proyek", navExperience: "Pengalaman", navCerts: "Sertifikat", navSkills: "Keahlian", navArticles: "Artikel", navContact: "Kontak",
+        resume: "CV", viewProjects: "Lihat proyek", getInTouch: "Hubungi saya", techStack: "Teknologi",
+        projEyebrow: "Karya pilihan", projTitle: "Proyek",
+        projDesc: "Beberapa proyek data science yang pernah saya kerjakan — lengkap dengan masalah bisnis, pendekatan, dan hasil yang terukur. Klik kartu untuk melihat studi kasusnya.",
+        all: "Semua", details: "Detail", more: "Lihat lebih banyak", fewer: "Tampilkan lebih sedikit",
+        problem: "Masalah", approach: "Pendekatan", result: "Hasil", viewCode: "Lihat kode", liveDemo: "Demo", release: "Rilis",
+        expEyebrow: "Karier", expTitle: "Pengalaman", expDesc: "Perjalanan profesional saya di bidang data science dan analitik.", achievements: "Pencapaian utama:",
+        skillEyebrow: "Perangkat", skillTitle: "Keahlian", skillDesc: "Tools yang saya pakai sehari-hari, dari eksplorasi sampai produksi — dan cara saya bekerja dengan tim remote.",
+        certEyebrow: "Kredensial", certTitle: "Sertifikat", certDesc: "Kursus dan sertifikasi yang mendukung keahlian data science saya.",
+        credential: "ID Kredensial", viewCredential: "Lihat sertifikat",
+        artEyebrow: "Tulisan", artTitle: "Artikel", artDesc: "Catatan dan tulisan seputar data science, analitik, dan machine learning.",
+        contactEyebrow: "Mari ngobrol", contactTitle: "Butuh data scientist?",
+        contactDesc: "Saya terbuka untuk posisi remote full-time maupun kontrak. Biasanya saya membalas dalam 24 jam.",
+        download: "Unduh", onRequest: "Atas permintaan", locale: "id-ID" },
+};
+let LANG = DATA.defaultLanguage === "id" ? "id" : "en";
+try { const l = localStorage.getItem("lang"); if (UI[l]) LANG = l; } catch (e) {}
+const L = (k) => UI[LANG][k] ?? UI.en[k] ?? k;
+// A value in data.js can be plain text or { en: "...", id: "..." }
+const t = (v) => (v && typeof v === "object" && !Array.isArray(v) && ("en" in v || "id" in v)) ? (v[LANG] ?? v.en ?? v.id) : v;
 
 const $ = (s) => document.querySelector(s);
-const svgNS = "http://www.w3.org/2000/svg";
+const esc = (v) => String(t(v) ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const list = (v) => { v = t(v); return Array.isArray(v) ? v : []; };
+const initialsOf = (s) => String(t(s) || "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const PAGE = 6;
+let PROJECTS = [], currentFilter = "All", showAll = false;
 
-// Deterministic pseudo-random so visuals stay stable between reloads
+// ---------- Auto cover art (used when a project has no image) ----------
 function rng(seed) { return () => (seed = (seed * 9301 + 49297) % 233280) / 233280; }
-
-function miniChart(type, seed) {
-  const r = rng(seed * 97 + 13), W = 400, H = 170, P = 24;
-  const accent = "var(--accent)", accent2 = "var(--accent-2)", grid = "var(--border)";
-  let g = "";
-  for (let i = 1; i < 4; i++) g += `<line x1="${P}" x2="${W - P}" y1="${(H / 4) * i}" y2="${(H / 4) * i}" stroke="${grid}" stroke-dasharray="3 5"/>`;
-  if (type === "line" || type === "area") {
-    const n = 26, pts = [], pts2 = [];
-    let y = 0.5;
-    for (let i = 0; i < n; i++) {
-      y = Math.min(.85, Math.max(.15, y + (r() - .45) * .18 + Math.sin(i / 2.2) * .05));
-      const x = P + (i / (n - 1)) * (W - 2 * P);
-      pts.push([x, H - y * H]);
-      pts2.push([x, H - (y + (r() - .5) * .08) * H]);
-    }
-    const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
-    const d2 = pts2.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
-    g += `<defs><linearGradient id="ga${seed}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${accent}" stop-opacity=".28"/><stop offset="1" stop-color="${accent}" stop-opacity="0"/></linearGradient></defs>`;
-    g += `<path d="${d} L${W - P} ${H} L${P} ${H} Z" fill="url(#ga${seed})"/>`;
-    if (type === "line") g += `<path d="${d2}" fill="none" stroke="${accent2}" stroke-width="2" stroke-dasharray="5 5"/>`;
-    g += `<path d="${d}" fill="none" stroke="${accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  } else if (type === "bars") {
-    const n = 12, bw = (W - 2 * P) / n;
-    for (let i = 0; i < n; i++) {
-      const h = (.25 + r() * .55) * (H - 30);
-      g += `<rect x="${P + i * bw + 4}" y="${H - h}" width="${bw - 8}" height="${h}" rx="4" fill="${i % 4 === 3 ? accent2 : accent}" opacity="${i % 4 === 3 ? 1 : .75}"/>`;
-    }
+function coverArt(type, seed) {
+  const r = rng(seed * 97 + 13), W = 400, H = 250;
+  const stops = [["var(--accent)", "var(--accent-2)"], ["var(--accent-2)", "var(--accent)"],
+                 ["var(--accent)", "color-mix(in srgb, var(--accent) 55%, #0b1120)"], ["color-mix(in srgb, var(--accent-2) 70%, #0b1120)", "var(--accent-2)"]][seed % 4];
+  let g = `<defs><linearGradient id="bg${seed}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${stops[0]}"/><stop offset="1" stop-color="${stops[1]}"/></linearGradient></defs>
+    <rect width="${W}" height="${H}" fill="url(#bg${seed})"/>`;
+  for (let i = 1; i < 5; i++) g += `<line x1="0" x2="${W}" y1="${H / 5 * i}" y2="${H / 5 * i}" stroke="#fff" stroke-opacity=".12" stroke-dasharray="3 6"/>`;
+  if (type === "bars") {
+    const n = 11, bw = W / n;
+    for (let i = 0; i < n; i++) { const h = (.2 + r() * .4) * H; g += `<rect x="${i * bw + 7}" y="${H - h}" width="${bw - 14}" height="${h}" rx="5" fill="#fff" opacity="${.18 + (i % 3) * .1}"/>`; }
   } else if (type === "scatter") {
-    for (let i = 0; i < 70; i++) {
-      const c = i % 3, cx = [110, 220, 310][c] + (r() - .5) * 110, cy = [60, 110, 70][c] + (r() - .5) * 70;
-      g += `<circle cx="${cx}" cy="${cy}" r="${3 + r() * 3}" fill="${c === 1 ? accent2 : accent}" opacity="${.45 + r() * .45}"/>`;
-    }
+    for (let i = 0; i < 60; i++) { const c = i % 3, cx = [110, 230, 320][c] + (r() - .5) * 110, cy = [170, 200, 150][c] + (r() - .5) * 80;
+      g += `<circle cx="${cx}" cy="${cy}" r="${3 + r() * 4}" fill="#fff" opacity="${.2 + r() * .4}"/>`; }
+  } else {
+    const n = 24, pts = []; let y = .35;
+    for (let i = 0; i < n; i++) { y = Math.min(.6, Math.max(.12, y + (r() - .45) * .14 + Math.sin(i / 2.3) * .04)); pts.push([i / (n - 1) * W, H - y * H]); }
+    const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+    g += `<path d="${d} L${W} ${H} L0 ${H} Z" fill="#fff" opacity="${type === "area" ? .28 : .14}"/><path d="${d}" fill="none" stroke="#fff" stroke-width="3" stroke-opacity=".75" stroke-linejoin="round"/>`;
   }
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${g}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}</svg>`;
+}
+function cover(p, i, withTitle) {
+  if (p.image) return `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`;
+  return coverArt(p.chart || "line", i + 1) + (withTitle
+    ? `<div class="cover-title"><b>${esc(p.title)}</b><span>${esc(p.category)}</span></div>`
+    : `<span class="cover-cat">${esc(p.category)}</span>`);
 }
 
 const icon = {
   gh: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>',
-  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>'
+  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+  cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+  award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
 };
 
-// Escape text from the content files before putting it into HTML
-const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const list = (v) => Array.isArray(v) ? v : [];
-
-// ---- GitHub integration: latest Release, stars and language, fetched in the visitor's browser ----
+// ---------- GitHub integration: latest Release, stars and language ----------
 const TOPIC_CATEGORY = { "machine-learning": "Machine Learning", "deep-learning": "Machine Learning", "nlp": "NLP",
   "computer-vision": "Computer Vision", "data-analysis": "Analytics", "analytics": "Analytics", "dashboard": "Analytics",
   "data-visualization": "Analytics", "data-engineering": "Data Engineering", "time-series": "Machine Learning" };
 const prettyName = (n) => n.replace(/[-_]+/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-const fmtDate = (d) => d ? new Date(d + "T00:00:00").toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "";
-
-function mergeGithub(projects, gh) {
-  const repos = (gh && gh.repos) || {};
-  const find = (name) => repos[name] || repos[Object.keys(repos).find(k => k.toLowerCase() === name.toLowerCase())];
-  const merged = projects.map(p => {
-    const g = p.repo ? find(p.repo.trim()) : null;
-    if (!g) return p;
-    return { ...p, gh: g, github: p.github || g.url, demo: p.demo || g.homepage,
-      summary: p.summary || g.description, tags: list(p.tags).length ? p.tags : [g.language, ...g.topics].filter(Boolean).slice(0, 6) };
-  });
-  const linked = new Set(merged.filter(p => p.gh).map(p => p.gh.url));
-  const charts = ["line", "bars", "scatter", "area"];
-  list(gh && gh.auto).forEach((name, i) => {
-    const g = repos[name];
-    if (!g || linked.has(g.url)) return;
-    merged.push({ title: prettyName(g.name), category: (g.topics.map(t => TOPIC_CATEGORY[t]).find(Boolean)) || "Projects",
-      chart: charts[i % charts.length], summary: g.description, tags: [g.language, ...g.topics].filter(Boolean).slice(0, 6),
-      github: g.url, demo: g.homepage, gh: g });
-  });
-  return merged;
-}
-
-function ghMeta(g) {
-  if (!g) return "";
-  const r = g.release;
-  return `<div class="gh-meta">
-    ${r ? `<a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.notes)}">● ${esc(r.tag)} · Released ${esc(fmtDate(r.date))}</a>` : ""}
-    ${g.stars ? `<span>★ ${esc(g.stars)}</span>` : ""}
-    ${g.language ? `<span>${esc(g.language)}</span>` : ""}
-  </div>`;
-}
-
-function renderProjects(filter = "All") {
-  const grid = $("#projectGrid");
-  grid.innerHTML = PROJECTS.map((p, i) => ({ p, i }))
-    .filter(({ p }) => filter === "All" || p.category === filter)
-    .map(({ p, i }) => `
-      <article class="card reveal ${p.featured && filter === "All" ? "featured" : ""}">
-        <div class="card-visual">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">` : miniChart(p.chart || "line", i + 1)}<span class="card-cat">${p.featured ? "★ Featured · " : ""}${esc(p.category)}</span></div>
-        <div class="card-body">
-          <h3>${esc(p.title)}</h3>
-          <p class="summary">${esc(p.summary)}</p>
-          <div class="impact">${list(p.impact).map(m => `<div><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join("")}</div>
-          ${ghMeta(p.gh)}
-          <div class="tags">${list(p.tags).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-          ${p.problem || p.approach || p.result ? `<details class="psr"><summary>Case study →</summary>
-            <dl>${p.problem ? `<dt>Problem</dt><dd>${esc(p.problem)}</dd>` : ""}${p.approach ? `<dt>Approach</dt><dd>${esc(p.approach)}</dd>` : ""}${p.result ? `<dt>Result</dt><dd>${esc(p.result)}</dd>` : ""}</dl>
-          </details>` : ""}
-          <div class="card-foot">
-            ${p.github ? `<a class="btn btn-ghost btn-sm" href="${esc(p.github)}" target="_blank" rel="noopener">${icon.gh}Code</a>` : ""}
-            ${p.demo ? `<a class="btn btn-ghost btn-sm" href="${esc(p.demo)}" target="_blank" rel="noopener">${icon.ext}Live demo</a>` : ""}
-          </div>
-        </div>
-      </article>`).join("");
-  observe();
-}
-
-let currentFilter = "All";
-function renderFilters() {
-  const cats = ["All", ...new Set(PROJECTS.map(p => p.category).filter(Boolean))];
-  const box = $("#filters");
-  if (!cats.includes(currentFilter)) currentFilter = "All";
-  box.innerHTML = cats.map(c => `<button class="chip ${c === currentFilter ? "active" : ""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
-  if (box.dataset.bound) return;
-  box.dataset.bound = "1";
-  box.addEventListener("click", e => {
-    const b = e.target.closest(".chip"); if (!b) return;
-    currentFilter = b.dataset.c;
-    box.querySelectorAll(".chip").forEach(x => x.classList.toggle("active", x === b));
-    renderProjects(currentFilter);
-  });
-}
-
-function renderSkills() {
-  $("#skillGrid").innerHTML = SKILLS.map(s => `
-    <div class="skill-box reveal"><h4><i>${esc(s.icon)}</i>${esc(s.name)}</h4><p>${esc(s.note)}</p>
-    <div class="tags">${list(s.items).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>`).join("");
-}
-
-function renderExperience() {
-  $("#expList").innerHTML = EXPERIENCE.map(e => `
-    <div class="exp reveal"><div class="when mono">${esc(e.when)}</div>
-    <div><h4>${esc(e.role)}</h4><div class="org">${esc(e.org)}</div><ul>${list(e.points).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></div>`).join("");
-}
-
-function renderProfile() {
-  const p = PROFILE;
-  document.title = `${p.name || ""} — ${p.role || ""}`;
-  document.querySelectorAll("[data-p]").forEach(el => { el.textContent = p[el.dataset.p] ?? ""; });
-  document.querySelectorAll("[data-resume]").forEach(el => { el.href = p.resume || "#contact"; if (!p.resume) el.removeAttribute("target"); });
-  if (p.photo) { $("#avatar").src = p.photo; $("#avatar").alt = p.name || ""; $("#avatar").hidden = false; }
-  $("#lnkEmail").href = "mailto:" + (p.email || "");
-  $("#lnkLinkedin").href = p.linkedin || "#";
-  $("#lnkGithub").href = p.github || "#";
-  $("#txtLinkedin").textContent = (p.linkedin || "").replace(/^https?:\/\/(www\.)?linkedin\.com/, "");
-  $("#txtGithub").textContent = (p.github || "").replace(/^https?:\/\/(www\.)?github\.com\//, "@");
-  const kv = (arr, cls) => list(arr).map(k => `<div class="${cls}"><div class="v">${esc(k.value)}</div><div class="l">${esc(k.label)}</div></div>`).join("");
-  $("#heroKpis").innerHTML = kv(DATA.heroKpis, "kpi");
-  $("#stats").innerHTML = kv(DATA.stats, "stat");
-  $("#why").innerHTML = list(DATA.why).map(w => `<div class="reveal"><h4>${esc(w.title)}</h4><p>${esc(w.text)}</p></div>`).join("");
-}
-
-function heroChart() {
-  const svg = $("#heroChart"), r = rng(7), n = 30, W = 360, H = 150;
-  let a = [], f = [], y = .45;
-  for (let i = 0; i < n; i++) { y = Math.min(.85, Math.max(.2, y + (r() - .46) * .12)); a.push(y); f.push(y + (r() - .5) * .06); }
-  const toPath = (arr, len) => arr.slice(0, len).map((v, i) => `${i ? "L" : "M"}${(i / (n - 1) * W).toFixed(1)} ${(H - v * H).toFixed(1)}`).join(" ");
-  const cut = 22;
-  svg.innerHTML = `
-    <defs><linearGradient id="hg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".25"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
-    ${[1,2,3].map(i => `<line x1="0" x2="${W}" y1="${H/4*i}" y2="${H/4*i}" stroke="var(--border)" stroke-dasharray="3 5"/>`).join("")}
-    <rect x="${cut/(n-1)*W}" y="0" width="${W - cut/(n-1)*W}" height="${H}" fill="var(--accent-soft)"/>
-    <path d="${toPath(a, cut + 1)} L${cut/(n-1)*W} ${H} L0 ${H} Z" fill="url(#hg)"/>
-    <path d="${toPath(a, cut + 1)}" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-    <path d="M${(cut/(n-1)*W).toFixed(1)} ${(H - a[cut]*H).toFixed(1)} ${f.slice(cut).map((v, i) => `L${((cut + i)/(n-1)*W).toFixed(1)} ${(H - v*H).toFixed(1)}`).join(" ")}" fill="none" stroke="var(--accent-2)" stroke-width="2.5" stroke-dasharray="5 4"/>
-    <text x="6" y="14" font-size="11" fill="var(--muted)" font-family="JetBrains Mono">actual</text>
-    <text x="${cut/(n-1)*W + 6}" y="14" font-size="11" fill="var(--accent-2)" font-family="JetBrains Mono">forecast</text>`;
-}
-
-let io;
-function observe() {
-  if (!("IntersectionObserver" in window)) { document.querySelectorAll(".reveal").forEach(el => el.classList.add("in")); return; }
-  io = io || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .08 });
-  document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
-}
-
-// Theme toggle (remembered per visitor)
-(function () {
-  const root = document.documentElement;
-  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
-  $("#themeBtn").addEventListener("click", () => {
-    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    root.dataset.theme = dark ? "light" : "dark";
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
-  });
-})();
-
-$("#yr").textContent = new Date().getFullYear();
-heroChart();
+const fmtDate = (d) => d ? new Date(d + "T00:00:00").toLocaleDateString(L("locale"), { month: "short", year: "numeric" }) : "";
 
 async function fetchGithub(username, linkedRepos) {
   const KEY = "gh-cache-v1", api = (path) => fetch("https://api.github.com" + path).then(r => r.ok ? r.json() : null);
   const cacheKey = username + "|" + linkedRepos.join(",");
   try { const c = JSON.parse(sessionStorage.getItem(KEY)); if (c && Date.now() - c.t < 3600e3 && c.key === cacheKey) return c.data; } catch (e) {}
   const info = (repo, rel) => ({ name: repo.name, description: repo.description || "", url: repo.html_url, homepage: repo.homepage || "",
-    stars: repo.stargazers_count || 0, language: repo.language || "", topics: (repo.topics || []).filter(t => t !== "portfolio"),
-    release: rel && { tag: rel.tag_name, name: rel.name || rel.tag_name, date: (rel.published_at || "").slice(0, 10), url: rel.html_url, notes: (rel.body || "").slice(0, 300) } });
+    stars: repo.stargazers_count || 0, language: repo.language || "", topics: (repo.topics || []).filter(x => x !== "portfolio"),
+    release: rel && { tag: rel.tag_name, date: (rel.published_at || "").slice(0, 10), url: rel.html_url } });
   const data = { repos: {}, auto: [] };
   await Promise.all(linkedRepos.map(async name => {
     const [repo, rel] = await Promise.all([api(`/repos/${name}`), api(`/repos/${name}/releases/latest`)]);
@@ -537,16 +547,236 @@ async function fetchGithub(username, linkedRepos) {
   try { sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), key: cacheKey, data })); } catch (e) {}
   return data;
 }
+function mergeGithub(projects, gh) {
+  const repos = (gh && gh.repos) || {};
+  const merged = projects.map(p => {
+    const g = p.repo ? repos[p.repo.trim()] : null;
+    if (!g) return p;
+    return { ...p, gh: g, github: p.github || g.url, demo: p.demo || g.homepage, summary: p.summary || g.description,
+      tags: list(p.tags).length ? p.tags : [g.language, ...g.topics].filter(Boolean).slice(0, 6) };
+  });
+  const charts = ["line", "bars", "scatter", "area"];
+  list(gh && gh.auto).forEach((name, i) => {
+    const g = repos[name];
+    merged.push({ title: prettyName(g.name), category: g.topics.map(x => TOPIC_CATEGORY[x]).find(Boolean) || "Projects",
+      chart: charts[i % 4], summary: g.description, tags: [g.language, ...g.topics].filter(Boolean).slice(0, 6),
+      releaseDate: g.release.date, github: g.url, demo: g.homepage, gh: g });
+  });
+  return merged;
+}
 
-PROFILE = DATA.profile || {}; SKILLS = list(DATA.skills); EXPERIENCE = list(DATA.experience);
+// ---------- Render ----------
+function renderStatic() {
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L(el.dataset.t); });
+  document.querySelectorAll("[data-lang]").forEach(b => b.classList.toggle("on", b.dataset.lang === LANG));
+  $("#mobileMenu").innerHTML = $("#navLinks").innerHTML;
+}
+
+function renderProfile() {
+  const p = DATA.profile || {};
+  const val = { ...p, greeting: t(p.greeting) || (LANG === "id" ? "Hai, saya" : "Hi, I'm"), initials: p.initials || initialsOf(p.name) };
+  document.title = `${t(p.name) || ""} — ${t(p.role) || ""}`;
+  document.querySelectorAll("[data-p]").forEach(el => { el.textContent = t(val[el.dataset.p]) ?? ""; });
+  $("#brandMark").innerHTML = p.photo ? `<img src="${esc(p.photo)}" alt="">` : esc(val.initials);
+  const card = $("#photoCard"), img = card.querySelector("img.photo");
+  if (p.photo && !img) card.insertAdjacentHTML("afterbegin", `<img class="photo" src="${esc(p.photo)}" alt="${esc(p.name)}">`);
+  card.querySelector(".photo-initials").hidden = !!p.photo;
+  document.querySelectorAll("[data-resume]").forEach(el => {
+    if (p.resume) { el.href = p.resume; el.target = "_blank"; el.rel = "noopener"; }
+  });
+  $("#txtResume").textContent = p.resume ? L("download") : L("onRequest");
+  $("#lnkEmail").href = "mailto:" + (p.email || "");
+  $("#lnkLinkedin").href = p.linkedin || "#";
+  $("#lnkGithub").href = p.github || "#";
+  $("#txtLinkedin").textContent = (p.linkedin || "").replace(/^https?:\/\/(www\.)?linkedin\.com/, "");
+  $("#txtGithub").textContent = (p.github || "").replace(/^https?:\/\/(www\.)?github\.com\//, "@");
+
+  // 1 stat → tech card stretches across 2 columns; 2 stats → 3 equal cards
+  const kpis = list(DATA.heroKpis).slice(0, 2);
+  $("#heroStats").innerHTML = kpis.map((k, i) => `
+    <div class="card stat reveal in ${i ? "alt" : ""}"><div class="v">${esc(k.value)}</div><div class="l">${esc(k.label)}</div></div>`).join("");
+  $("#techCard").classList.toggle("wide", kpis.length === 1);
+  $("#techCard").style.gridColumn = kpis.length === 0 ? "1 / -1" : "";
+  const tech = list(DATA.techStack).length ? DATA.techStack : list(DATA.skills).flatMap(s => list(s.items).slice(0, 2)).slice(0, 10);
+  $("#techChips").innerHTML = list(tech).map(x => `<span class="chip"><i></i>${esc(x)}</span>`).join("");
+}
+
+function filtered() { return PROJECTS.map((p, i) => ({ p, i })).filter(({ p }) => currentFilter === "All" || t(p.category) === currentFilter); }
+
+function renderFilters() {
+  const cats = ["All", ...new Set(PROJECTS.map(p => t(p.category)).filter(Boolean))];
+  if (!cats.includes(currentFilter)) currentFilter = "All";
+  $("#filters").innerHTML = cats.length > 2 ? cats.map(c => `<button class="filter ${c === currentFilter ? "active" : ""}" data-c="${esc(c)}">${c === "All" ? L("all") : esc(c)}</button>`).join("") : "";
+}
+
+function renderProjects() {
+  const items = filtered();
+  // featured projects first (only in the "All" view), then the rest in your order
+  if (currentFilter === "All") items.sort((a, b) => (b.p.featured ? 1 : 0) - (a.p.featured ? 1 : 0));
+  const visible = showAll ? items : items.slice(0, PAGE);
+  let wideUsed = false;
+  $("#projectGrid").innerHTML = visible.map(({ p, i }) => {
+    const wide = p.featured && currentFilter === "All" && !wideUsed; if (wide) wideUsed = true;
+    const tags = list(p.tags), first = list(p.impact)[0];
+    return `
+      <button class="card pcard reveal in ${wide ? "featured" : ""}" data-i="${i}" type="button">
+        <div class="pcover">${cover(p, i, wide)}</div>
+        <div class="pbody">
+          <div class="phead">
+            <span class="plogo">${p.logo ? `<img src="${esc(p.logo)}" alt="">` : esc(initialsOf(p.title))}</span>
+            <div><h3>${esc(p.title)}</h3><small>${esc(t(p.date) || fmtDate(p.releaseDate) || t(p.category))}</small></div>
+          </div>
+          <p class="summary">${esc(p.summary)}</p>
+          <div class="tags">${tags.slice(0, 3).map(x => `<span class="tag">${esc(x)}</span>`).join("")}${tags.length > 3 ? `<span class="tag">+${tags.length - 3}</span>` : ""}</div>
+          <div class="pfoot">
+            ${first ? `<span class="metric"><b>${esc(first.value)}</b>${esc(first.label)}</span>` : "<span></span>"}
+            ${p.gh && p.gh.release ? `<span class="gh">● ${esc(p.gh.release.tag)}</span>` : `<span class="btn btn-outline btn-sm">${L("details")} ${icon.ext}</span>`}
+          </div>
+        </div>
+      </button>`;
+  }).join("");
+  $("#moreBtn").hidden = items.length <= PAGE;
+  $("#moreBtn").textContent = showAll ? L("fewer") : `${L("more")} (${items.length - PAGE})`;
+}
+
+function openProject(i) {
+  const p = PROJECTS[i]; if (!p) return;
+  const g = p.gh, impact = list(p.impact);
+  const meta = [t(p.date) || fmtDate(p.releaseDate), g && g.release ? `${L("release")} ${g.release.tag} · ${fmtDate(g.release.date)}` : "", g && g.stars ? `★ ${g.stars}` : ""].filter(Boolean);
+  $("#modal").innerHTML = `
+    <div class="mcover">${cover(p, i, false)}<button class="icon-btn mclose" data-close aria-label="Close">${icon.close}</button></div>
+    <div class="mbody">
+      <div>
+        <div class="eyebrow">${esc(p.category)}</div>
+        <h3>${esc(p.title)}</h3>
+        ${meta.length ? `<div class="mmeta">${meta.map(esc).join(" · ")}</div>` : ""}
+      </div>
+      <p style="color:var(--muted)">${esc(p.summary)}</p>
+      ${impact.length ? `<div class="impact">${impact.map(m => `<div><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join("")}</div>` : ""}
+      <div class="case">
+        ${t(p.problem) ? `<div><h4>${L("problem")}</h4><p>${esc(p.problem)}</p></div>` : ""}
+        ${t(p.approach) ? `<div><h4>${L("approach")}</h4><p>${esc(p.approach)}</p></div>` : ""}
+        ${t(p.result) ? `<div><h4>${L("result")}</h4><p>${esc(p.result)}</p></div>` : ""}
+      </div>
+      <div class="tags">${list(p.tags).map(x => `<span class="tag">${esc(x)}</span>`).join("")}</div>
+      <div class="mlinks">
+        ${p.github ? `<a class="btn btn-primary btn-sm" href="${esc(p.github)}" target="_blank" rel="noopener">${icon.gh} ${L("viewCode")}</a>` : ""}
+        ${p.demo ? `<a class="btn btn-outline btn-sm" href="${esc(p.demo)}" target="_blank" rel="noopener">${icon.ext} ${L("liveDemo")}</a>` : ""}
+      </div>
+    </div>`;
+  $("#modal").dataset.i = i;
+  if (!$("#modal").open) $("#modal").showModal();
+}
+
+function renderExperience() {
+  $("#timeline").innerHTML = list(DATA.experience).map(e => {
+    const [org, place] = String(t(e.org) || "").split("·").map(s => s.trim());
+    const points = list(e.points);
+    return `
+    <div class="titem reveal in">
+      <div class="tlogo">${e.logo ? `<img src="${esc(e.logo)}" alt="">` : esc(initialsOf(org))}</div>
+      <div class="card tcard">
+        <div class="ttop"><span class="torg">${esc(org)}</span>${t(e.type) ? `<span class="badge">${esc(e.type)}</span>` : ""}</div>
+        <h3>${esc(e.role)}</h3>
+        <div class="twhen"><span>${icon.cal}${esc(e.when)}</span>${place ? `<span>${icon.pin}${esc(place)}</span>` : ""}</div>
+        ${points.length ? `<h5>${L("achievements")}</h5><ul>${points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+      </div>
+    </div>`; }).join("");
+}
+
+function renderSkills() {
+  $("#skillGrid").innerHTML = list(DATA.skills).map(s => `
+    <div class="card skill reveal in"><h4><i>${esc(s.icon)}</i>${esc(s.name)}</h4><p>${esc(s.note)}</p>
+    <div class="chips">${list(s.items).map(x => `<span class="chip"><i></i>${esc(x)}</span>`).join("")}</div></div>`).join("");
+  $("#why").innerHTML = list(DATA.why).map(w => `<div class="card reveal in"><h4>${esc(w.title)}</h4><p>${esc(w.text)}</p></div>`).join("");
+}
+
+function renderCertificates() {
+  const certs = list(DATA.certificates);
+  $("#certificates").hidden = !certs.length;
+  document.querySelectorAll("[data-certs-link]").forEach(a => a.hidden = !certs.length);
+  $("#certGrid").innerHTML = certs.map(c => `
+    <div class="card cert reveal in">
+      ${c.image ? `<div class="cert-img"><img src="${esc(c.image)}" alt="${esc(c.title)}" loading="lazy"></div>` : ""}
+      <div class="cert-body">
+        <div class="cert-head">
+          <span class="cert-logo">${c.logo ? `<img src="${esc(c.logo)}" alt="">` : icon.award}</span>
+          <div><h3>${esc(c.title)}</h3><div class="cert-meta">${esc([t(c.issuer), t(c.date)].filter(Boolean).join(" · "))}</div></div>
+        </div>
+        ${c.credentialId ? `<div class="cert-id">${L("credential")}: ${esc(c.credentialId)}</div>` : ""}
+        ${list(c.skills).length ? `<div class="tags">${list(c.skills).map(x => `<span class="tag">${esc(x)}</span>`).join("")}</div>` : ""}
+        ${c.url ? `<div class="cert-foot"><a class="btn btn-outline btn-sm" href="${esc(c.url)}" target="_blank" rel="noopener">${L("viewCredential")} ${icon.ext}</a></div>` : ""}
+      </div>
+    </div>`).join("");
+}
+
+function renderArticles() {
+  const arts = list(DATA.articles);
+  $("#articles").hidden = !arts.length;
+  document.querySelectorAll("[data-articles-link]").forEach(a => a.hidden = !arts.length);
+  $("#articleGrid").innerHTML = arts.map((a, i) => `
+    <a class="card acard reveal in" href="${esc(a.url)}" target="_blank" rel="noopener">
+      <div class="pcover">${a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : coverArt(["area", "bars", "scatter", "line"][i % 4], i + 40)}</div>
+      <div class="pbody"><small>${esc([t(a.date), t(a.source)].filter(Boolean).join(" · "))}</small><h3>${esc(a.title)}</h3>
+      ${t(a.summary) ? `<p class="summary">${esc(a.summary)}</p>` : ""}</div>
+    </a>`).join("");
+}
+
+function renderAll() {
+  renderStatic(); renderProfile(); renderFilters(); renderProjects(); renderExperience(); renderCertificates(); renderSkills(); renderArticles();
+  if ($("#modal").open) openProject(+$("#modal").dataset.i);
+}
+
+// ---------- Interactions ----------
+function observe() {   // fade-in for the hero cards on first load
+  if (!("IntersectionObserver" in window)) { document.querySelectorAll(".reveal").forEach(el => el.classList.add("in")); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .06 });
+  document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
+}
+
+document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => {
+  LANG = b.dataset.lang;
+  try { localStorage.setItem("lang", LANG); } catch (e) {}
+  renderAll();
+}));
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest(".filter"); if (!b) return;
+  currentFilter = b.dataset.c; showAll = false; renderFilters(); renderProjects();
+});
+$("#moreBtn").addEventListener("click", () => { showAll = !showAll; renderProjects(); });
+$("#projectGrid").addEventListener("click", e => { const c = e.target.closest(".pcard"); if (c) openProject(+c.dataset.i); });
+$("#modal").addEventListener("click", e => { if (e.target.closest("[data-close]") || e.target === e.currentTarget) e.currentTarget.close(); });
+$("#menuBtn").addEventListener("click", () => $("#mobileMenu").classList.toggle("open"));
+$("#mobileMenu").addEventListener("click", e => { if (e.target.closest("a")) $("#mobileMenu").classList.remove("open"); });
+
+// highlight the nav link of the section in view
+const navObs = "IntersectionObserver" in window && new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  document.querySelectorAll(".nav-links a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+if (navObs) document.querySelectorAll("header[id], section[id]").forEach(s => navObs.observe(s));
+
+(function () {   // dark mode toggle, remembered per visitor
+  const root = document.documentElement;
+  try { const x = localStorage.getItem("theme"); if (x) root.dataset.theme = x; } catch (e) {}
+  $("#themeBtn").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+})();
+
+// ---------- Boot ----------
+$("#yr").textContent = new Date().getFullYear();
 PROJECTS = list(DATA.projects);
-renderProfile(); renderFilters(); renderProjects(); renderSkills(); renderExperience(); observe();
+renderAll(); observe();
 
 const linkedRepos = PROJECTS.map(p => (p.repo || "").trim()).filter(Boolean);
 if (DATA.githubUsername || linkedRepos.length) {
   fetchGithub((DATA.githubUsername || "").trim(), linkedRepos).then(gh => {
     PROJECTS = mergeGithub(list(DATA.projects), gh);
-    renderFilters(); renderProjects(currentFilter);
+    renderFilters(); renderProjects();
   }).catch(err => console.warn("GitHub data unavailable", err));
 }
 </script>
