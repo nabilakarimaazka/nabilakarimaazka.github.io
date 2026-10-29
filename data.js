@@ -319,13 +319,13 @@ window.PORTFOLIO = {
     },
     {
       when: "2018 — 2022",
-      role: { en: "B.Sc. Statistics / Computer Science", id: "S1 Statistika / Ilmu Komputer" },
-      org: "University Name",
+      role: { en: "Bachelor’s Degree in Informatics Engineering", id: "S1 Teknik Informatika" },
+      org: "Sunan Kalijaga State Islamic University, Yogyakarta, Indonesia",
       type: { en: "Education", id: "Pendidikan" },
-      logo: "",
+      logo: "../images/rima.jpg",
       points: {
-        en: ["Thesis: Time-series forecasting with machine learning.", "GPA 3.7 / 4.0"],
-        id: ["Skripsi: Forecasting time-series dengan machine learning.", "IPK 3,7 / 4,0"],
+        en: ["Thesis: A COMPARISON OF TWITTER SENTIMENT ANALYSIS USING THE NAIVE BAYES CLASSIFIER AND SUPPORT VECTOR MACHINE METHODS (Case Study: Tweet Responses to Electric Cars).", "GPA 3.55 / 4.0"],
+        id: ["Skripsi: PERBANDINGAN ANALISIS SENTIMEN TWITTER DENGAN METODE NAIVE BAYES CLASSIFIER DAN SUPPORT VECTOR MACHINE (Studi Kasus : Data Tanggapan Tweet Terhadap Mobil Listrik)", "IPK 3,55 / 4,0"],
       },
     },
   ],
