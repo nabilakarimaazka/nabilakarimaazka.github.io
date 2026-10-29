@@ -65,6 +65,41 @@ window.PORTFOLIO = {
      --------------------------------------------------------------- */
   projects: [
     {
+      // ★ Project asli pertama — sumber: README di repo GitHub
+      title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
+      category: "Machine Learning",
+      featured: true,
+      image: "https://raw.githubusercontent.com/nabilakarimaazka/customer-repeat-order-prediction/main/docs/prospects.png",
+      chart: "bars",
+      date: { en: "Sep — Oct 2026", id: "Sep — Okt 2026" },
+      logo: "",
+      repo: "nabilakarimaazka/customer-repeat-order-prediction",
+      summary: {
+        en: "Ranks wholesale customers by how likely they are to order again in the next 30 days, so the sales team follows up with the right people first — delivered as a Streamlit app with a monthly update workflow.",
+        id: "Mengurutkan pelanggan grosir berdasarkan peluang mereka order lagi dalam 30 hari ke depan, agar tim sales menghubungi orang yang tepat lebih dulu — disajikan sebagai aplikasi Streamlit dengan alur update bulanan.",
+      },
+      impact: [
+        { value: "2.45×", label: { en: "lift in top 20% of customers", id: "lift di 20% pelanggan teratas" } },
+        { value: "-59%", label: { en: "contacts needed per reorder", id: "kontak per repeat order" } },
+        { value: "0.789", label: { en: "ROC-AUC (PR-AUC 0.569)", id: "ROC-AUC (PR-AUC 0,569)" } },
+      ],
+      problem: {
+        en: "A wholesale retailer's sales team has limited time. Calling every customer is expensive, and most calls reach people who would order anyway or are not about to order at all. With only 22% of customers reordering in a given month, they needed a ranked monthly follow-up list.",
+        id: "Tim sales sebuah retailer grosir punya waktu terbatas. Menghubungi semua pelanggan itu mahal, dan kebanyakan telepon sampai ke orang yang memang akan order atau justru belum akan order. Karena hanya 22% pelanggan yang order ulang tiap bulan, mereka butuh daftar follow-up bulanan yang sudah diurutkan.",
+      },
+      approach: {
+        en: "Cleaned the UCI Online Retail II data (5,852 customers) and built monthly snapshots so features only use orders before each cutoff — no data leakage. Engineered 18 behavioural features (recency, order gaps, frequency, spend, returns), used a time-based train/validation/test split, and compared a recency rule and logistic regression against LightGBM. SHAP gives the top 3 reasons behind each customer's score.",
+        id: "Membersihkan data UCI Online Retail II (5.852 pelanggan) dan membuat snapshot bulanan sehingga fitur hanya memakai order sebelum tiap cutoff — tanpa data leakage. Membuat 18 fitur perilaku (recency, jarak antar order, frekuensi, belanja, retur), memakai pembagian train/validasi/test berbasis waktu, dan membandingkan aturan recency serta logistic regression dengan LightGBM. SHAP memberi 3 alasan utama di balik skor tiap pelanggan.",
+      },
+      result: {
+        en: "Contacting the top 20% reaches 49% of reordering customers (vs 38% with a simple recency rule), with lift stable at 2.36–2.64× across three test months. About 1.8 contacts per reorder instead of 4.5. The Streamlit app generates the ranked prospect list with reasons, checks last month's predictions against actual sales, and only activates a retrained model if it doesn't perform worse.",
+        id: "Menghubungi 20% pelanggan teratas menjangkau 49% pelanggan yang order ulang (dibanding 38% dengan aturan recency biasa), dengan lift stabil 2,36–2,64× selama tiga bulan uji. Sekitar 1,8 kontak per repeat order, bukan 4,5. Aplikasi Streamlit membuat daftar prospek beserta alasannya, mengecek prediksi bulan lalu terhadap penjualan aktual, dan hanya mengaktifkan model hasil retrain jika performanya tidak lebih buruk.",
+      },
+      tags: ["Python", "LightGBM", "scikit-learn", "SHAP", "Pandas", "Streamlit"],
+      github: "https://github.com/nabilakarimaazka/customer-repeat-order-prediction",
+      demo: "",
+    },
+    {
       title: { en: "Retail Demand Forecasting for 1,200 SKUs", id: "Forecasting Permintaan Ritel untuk 1.200 SKU" },
       category: "Machine Learning",
       featured: true,
@@ -198,39 +233,6 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
-      title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
-      category: "Machine Learning",
-      featured: false,
-      image: "",
-      chart: "bars",
-      date: "",
-      logo: "",
-      repo: "",
-      summary: {
-        en: "Designed a self-serve KPI dashboard covering revenue, cohorts and funnel conversion for leadership.",
-        id: "Merancang dashboard KPI self-service yang mencakup pendapatan, cohort, dan konversi funnel untuk manajemen.",
-      },
-      impact: [
-        { value: "15+", label: { en: "stakeholders using weekly", id: "stakeholder memakai tiap minggu" } },
-        { value: "-70%", label: { en: "ad-hoc data requests", id: "permintaan data ad-hoc" } },
-      ],
-      problem: {
-        en: "Leadership requested the same numbers every week from the data team.",
-        id: "Manajemen meminta angka yang sama setiap minggu ke tim data.",
-      },
-      approach: {
-        en: "Modelled data in SQL (star schema), built cohort and funnel views, designed dashboard in Tableau.",
-        id: "Memodelkan data di SQL (star schema), membuat view cohort dan funnel, merancang dashboard di Tableau.",
-      },
-      result: {
-        en: "Single source of truth for KPIs; freed ~6 hours/week of analyst time.",
-        id: "Satu sumber data KPI yang konsisten; menghemat ~6 jam/minggu waktu analis.",
-      },
-      tags: ["SQL", "dbt", "Tableau", "BigQuery"],
-      github: "https://github.com/nabilakarimaazka/customer-repeat-order-prediction",
-      demo: "",
-    },
-    {
       title: { en: "A/B Test Analysis of Checkout Redesign", id: "Analisis A/B Test Desain Ulang Checkout" },
       category: "Machine Learning",
       featured: true,
@@ -260,7 +262,7 @@ window.PORTFOLIO = {
         id: "Merekomendasikan rilis penuh; mendokumentasikan template eksperimen yang bisa dipakai ulang.",
       },
       tags: ["Python", "Statistics", "SciPy", "PyMC"],
-      github: "https://github.com/nabilakarimaazka/customer-repeat-order-prediction",
+      github: "",
       demo: "",
     },
   ],
