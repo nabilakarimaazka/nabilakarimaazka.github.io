@@ -182,7 +182,7 @@
   .titem:not(:last-child)::before { content: ""; position: absolute; left: 25px; top: 56px; bottom: -26px; width: 2px; background: var(--border); }
   .tlogo { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); box-shadow: var(--shadow);
            display: grid; place-items: center; position: relative; font: 700 15px Poppins, sans-serif; color: var(--accent); }
-  .tlogo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .tlogo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 5px; border-radius: 50%; background: #fff; }
   .tlogo::after { content: ""; position: absolute; top: -2px; right: -2px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
   .titem:nth-child(2n) .tlogo::after { background: var(--good); }
   .titem:nth-child(3n) .tlogo::after { background: var(--accent-2); }

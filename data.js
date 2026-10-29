@@ -322,7 +322,7 @@ window.PORTFOLIO = {
       role: { en: "Bachelor’s Degree in Informatics Engineering", id: "S1 Teknik Informatika" },
       org: "Sunan Kalijaga State Islamic University, Yogyakarta, Indonesia",
       type: { en: "Education", id: "Pendidikan" },
-      logo: "../images/uin_suka.png",
+      logo: "images/uin_suka.png",
       points: {
         en: ["Thesis: A COMPARISON OF TWITTER SENTIMENT ANALYSIS USING THE NAIVE BAYES CLASSIFIER AND SUPPORT VECTOR MACHINE METHODS (Case Study: Tweet Responses to Electric Cars).", "GPA 3.55 / 4.0"],
         id: ["Skripsi: PERBANDINGAN ANALISIS SENTIMEN TWITTER DENGAN METODE NAIVE BAYES CLASSIFIER DAN SUPPORT VECTOR MACHINE (Studi Kasus : Data Tanggapan Tweet Terhadap Mobil Listrik)", "IPK 3,55 / 4,0"],
