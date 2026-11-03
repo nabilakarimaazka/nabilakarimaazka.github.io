@@ -1,16 +1,3 @@
-/* =====================================================================
-   ISI PORTOFOLIO KAMU — cukup edit file ini saja.
-   - Teks selalu di dalam tanda kutip "...".
-   - Setiap item dipisah koma. Kalau website kosong setelah diedit,
-     biasanya ada koma atau tanda kutip yang hilang.
-   - true / false selalu huruf kecil.
-   - Gambar: upload ke folder "images", lalu tulis misalnya "images/me.jpg".
-
-   DUA BAHASA (tombol EN / ID di website):
-   - Teks dua bahasa ditulis begini:  { en: "Hello", id: "Halo" }
-   - Teks yang sama di kedua bahasa cukup ditulis biasa: "Python"
-   ===================================================================== */
-
 window.PORTFOLIO = {
 
   // Warna tema: "blue", "coral", "pink", atau "brown"
@@ -50,22 +37,9 @@ window.PORTFOLIO = {
   // Chip di kartu "Tech stack"
   techStack: ["Python", "SQL", "Pandas", "scikit-learn", "XGBoost", "PyTorch", "Tableau", "BigQuery"],
 
-  /* ---------------------------------------------------------------
-     PROJECTS — untuk menambah project, salin satu blok { ... },
-     tempel di bawahnya, lalu ganti isinya.
-     category: dipakai untuk tombol filter
-     featured: true → tampil besar di paling atas
-     image:    gambar cover (screenshot dashboard/chart). Kalau kosong,
-               cover dibuat otomatis.
-     chart:    gaya cover otomatis: "line", "area", "bars", "scatter"
-     date:     periode project, contoh "Jan 2025 — Mar 2025"
-     logo:     opsional, ikon kecil project, contoh "images/logo-churn.png"
-     repo:     opsional, "username/nama-repo" → kartu menampilkan
-               versi Release terbaru & stars dari GitHub.
-     --------------------------------------------------------------- */
+  
   projects: [
     {
-      // ★ Project asli pertama — sumber: README di repo GitHub
       title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
       category: "Machine Learning",
       featured: true,
@@ -100,7 +74,6 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
-      // ★ Project asli — sumber: experiment brief, SQL & notebook di repo GitHub
       title: { en: "Marketing Campaign A/B Test Analysis", id: "Analisis A/B Test Kampanye Marketing" },
       category: "Analytics",
       featured: false,
@@ -145,27 +118,26 @@ window.PORTFOLIO = {
     { icon: "◎", name: "Cloud", note: { en: "Platforms", id: "Platform" }, items: ["BigQuery", "GCP", "AWS (S3, SageMaker)", "Snowflake"] },
   ],
 
-  /* type:   label kecil di kanan, contoh "Full-time", "Internship", "Contract"
-     logo:   opsional, logo perusahaan, contoh "images/logo-company.png"
-     org:    "Nama Perusahaan · Lokasi" (bagian setelah · tampil sebagai lokasi)
-     points: daftar pencapaian. Dua bahasa: { en: [ ... ], id: [ ... ] } */
+ 
   experience: [
     {
-      when: { en: "2024 — Present", id: "2024 — Sekarang" },
-      role: "Data Scientist",
-      org: "Company Name · Remote",
+      when: { en: "June 2025 — Present", id: "Juni — Sekarang" },
+      role: "IT Governance Specialist",
+      org: "Dinas Komunikasi Informatika Statistik dan Persandian · Onsite",
       type: "Full-time",
-      logo: "",
+      logo: "../images/kominfo.jpg",
       points: {
         en: [
-          "Built demand forecasting models used by 20+ planners across 3 regions.",
-          "Owned experimentation analysis for product team (10+ A/B tests).",
-          "Mentored 2 junior analysts on SQL and Python best practices.",
+          "Digitized 14+ public services that previously ran manually and undocumented, building a complaint intake system where each service records its data in a structured Google Sheet",
+          "Integrated all service sheets with Google Apps Script into a real-time monitoring dashboard, replacing a manual monthly report that took 4–5 hours to compile with always-current performance data per service and automatic flags for complaints not yet followed up.",
+          "Built a Google Forms ticketing system that gives every complaint a unique ticket ID with trackable progress, plus automatic SLA calculation to monitor response times.",
+          "Built a task-management dashboard to track staff workload, progress, and delays, and automated file naming and documentation on Google Drive.",
         ],
         id: [
-          "Membangun model forecasting permintaan yang dipakai 20+ perencana di 3 wilayah.",
-          "Bertanggung jawab atas analisis eksperimen untuk tim produk (10+ A/B test).",
-          "Membimbing 2 analis junior tentang praktik terbaik SQL dan Python.",
+          "Digitalisasi lebih dari 14 layanan publik yang sebelumnya dijalankan secara manual dan tidak terdokumentasi, serta membangun sistem penerimaan keluhan di mana setiap layanan mencatat datanya dalam Google Sheet yang terstruktur.",
+          "Mengintegrasikan semua lembar kerja layanan dengan Google Apps Script ke dalam dasbor pemantauan real-time, menggantikan laporan bulanan manual yang membutuhkan waktu 4–5 jam untuk disusun dengan data kinerja terkini per layanan serta pemberitahuan otomatis untuk keluhan yang belum ditindaklanjuti.",
+          "Membangun sistem tiket berbasis Google Forms yang memberikan ID tiket unik untuk setiap keluhan dengan progres yang dapat dilacak, serta perhitungan SLA otomatis untuk memantau waktu respons.",
+          "Membangun dasbor manajemen tugas untuk melacak beban kerja staf, progres, dan keterlambatan, serta mengotomatiskan penamaan file dan dokumentasi di Google Drive.",
         ],
       },
     },
@@ -177,16 +149,16 @@ window.PORTFOLIO = {
       logo: "../images/tunas_honda.jpg",
       points: {
         en: [
-          "Analyzed 1M+ customer and transaction records across 50+ dealer branches to identify customer behavior patterns, purchasing trends, and opportunities for customer retention.",
-          "Developed and evaluated predictive models to identify customers with a high likelihood of repeat purchases in 2024, enabling sales teams to prioritize follow-ups toward higher-potential customers.",
-          "Monitored daily performance across 50+ Honda dealerships to track KPIs and identify performance trends.",
-          "Monitored user activity and behavior across applications serving 500K+ users to identify usage patterns and improvement opportunities.",
+          "Built a linear regression model in Python on 1M+ customer records to predict how many days until each customer’s next purchase, letting the marketing team follow up only with customers whose repurchase date was approaching and cutting follow-up time and costs by about 50%.",
+          "Built a daily dashboard (Google Sheets) monitoring customer app-registration targets across 50+ dealer branches in Lampung, reconciling sales records against Motoran app user data to flag dealers with unregistered customers.",
+          "Cleaned and consolidated 1M+ customer records with incomplete and inconsistent fields, making the data usable for modeling and reporting.",
+          "Analyzed market and customer behavior with Python, KNIME, and Excel, delivering weekly insight reports and recommendations to management.",
         ],
         id: [
-          "Menganalisis lebih dari 1 juta catatan pelanggan dan transaksi di lebih dari 50 cabang dealer untuk mengidentifikasi pola perilaku pelanggan, tren pembelian, dan peluang untuk mempertahankan pelanggan.",
-          "Telah mengembangkan dan mengevaluasi model prediktif untuk mengidentifikasi pelanggan yang memiliki kemungkinan tinggi untuk melakukan pembelian ulang pada tahun 2024, sehingga tim penjualan dapat memprioritaskan tindak lanjut terhadap pelanggan yang memiliki potensi lebih tinggi.",
-          "Memantau performa harian 50+ dealer Honda untuk mengevaluasi KPI dan mengidentifikasi tren kinerja.",
-          "Memantau aktivitas dan perilaku pengguna aplikasi dengan lebih dari 500 ribu pengguna untuk mengidentifikasi pola penggunaan dan peluang peningkatan layanan.",
+          "Membuat model regresi linier di Python berdasarkan lebih dari 1 juta catatan pelanggan untuk memprediksi berapa hari lagi hingga pembelian berikutnya oleh masing-masing pelanggan, sehingga tim pemasaran dapat melakukan tindak lanjut hanya kepada pelanggan yang tanggal pembelian ulangnya sudah mendekati, serta mengurangi waktu dan biaya tindak lanjut sekitar 50%.",
+          "Membuat dasbor harian (Google Sheets) untuk memantau target pendaftaran aplikasi pelanggan di lebih dari 50 cabang dealer di Lampung, mencocokkan catatan penjualan dengan data pengguna aplikasi Motoran untuk mengidentifikasi dealer yang memiliki pelanggan yang belum terdaftar.",
+          "Membersihkan dan mengonsolidasikan lebih dari 1 juta catatan pelanggan yang memiliki kolom tidak lengkap dan tidak konsisten, sehingga data tersebut dapat digunakan untuk pemodelan dan pelaporan.",
+          "Menganalisis pasar dan perilaku pelanggan menggunakan Python, KNIME, dan Excel, serta menyajikan laporan wawasan dan rekomendasi mingguan kepada manajemen.",
         ],
       },
     },
