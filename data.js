@@ -30,12 +30,12 @@ window.PORTFOLIO = {
 
   // Angka besar di kartu bawah nama. Bisa 1 atau 2 kartu.
   heroKpis: [
-    { value: { en: "3+ yrs", id: "3+ thn" }, label: { en: "Years of experience", id: "Pengalaman" } },
-    { value: "8+", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
+    { value: { en: "2+ yrs", id: "2+ thn" }, label: { en: "Years of experience", id: "Pengalaman" } },
+    { value: "2", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
   ],
 
   // Chip di kartu "Tech stack"
-  techStack: ["Python", "SQL", "Pandas", "scikit-learn", "XGBoost", "PyTorch", "Tableau", "BigQuery"],
+  techStack: ["Python", "SQL", "pandas", "scikit-learn", "statsmodels", "Power BI", "Tableau", "Looker Studio"],
 
   
   projects: [
@@ -110,12 +110,16 @@ window.PORTFOLIO = {
   ],
 
   skills: [
-    { icon: "⌘", name: { en: "Languages & Data", id: "Bahasa & Data" }, note: { en: "Daily drivers", id: "Dipakai sehari-hari" }, items: ["Python", "SQL", "R", "Pandas", "NumPy", "Polars"] },
-    { icon: "◆", name: "Machine Learning", note: { en: "Modelling & evaluation", id: "Pemodelan & evaluasi" }, items: ["scikit-learn", "XGBoost", "LightGBM", "PyTorch", "Hugging Face", "SHAP"] },
-    { icon: "▲", name: { en: "Statistics", id: "Statistika" }, note: { en: "Inference & experimentation", id: "Inferensi & eksperimen" }, items: ["A/B testing", "Hypothesis testing", "Regression", "Time series", "Bayesian"] },
-    { icon: "▦", name: { en: "Visualization & BI", id: "Visualisasi & BI" }, note: { en: "Communicating results", id: "Menyampaikan hasil" }, items: ["Tableau", "Power BI", "Plotly", "Matplotlib", "Streamlit"] },
-    { icon: "☁", name: "Data Engineering & MLOps", note: { en: "Getting to production", id: "Sampai ke produksi" }, items: ["Airflow", "dbt", "Docker", "FastAPI", "MLflow", "Git"] },
-    { icon: "◎", name: "Cloud", note: { en: "Platforms", id: "Platform" }, items: ["BigQuery", "GCP", "AWS (S3, SageMaker)", "Snowflake"] },
+    { icon: "⌘", name: { en: "Programming & Data", id: "Pemrograman & Data" }, note: { en: "Daily drivers", id: "Dipakai sehari-hari" },
+      items: ["SQL (DuckDB)", "Python", "pandas", "NumPy", "scikit-learn", "statsmodels", "Matplotlib", "Google Apps Script"] },
+    { icon: "◆", name: { en: "Machine Learning & Statistics", id: "Machine Learning & Statistika" }, note: { en: "Modelling & experimentation", id: "Pemodelan & eksperimen" },
+      items: ["A/B testing", "Hypothesis testing", "Classification", "Regression", "Predictive modeling", "Exploratory data analysis"] },
+    { icon: "▦", name: { en: "BI & Visualization", id: "BI & Visualisasi" }, note: { en: "Communicating results", id: "Menyampaikan hasil" },
+      items: ["Power BI", "Tableau", "Looker Studio", "KNIME", "Excel", "Google Sheets"] },
+    { icon: "☁", name: { en: "Platforms & Tools", id: "Platform & Tools" }, note: { en: "Workflow & collaboration", id: "Alur kerja & kolaborasi" },
+      items: ["Microsoft Fabric", "Google Workspace", "Git/GitHub", "Jupyter Notebook"] },
+    { icon: "◎", name: { en: "Languages", id: "Bahasa" }, note: { en: "Spoken", id: "Bahasa lisan" },
+      items: [{ en: "Indonesian (native)", id: "Bahasa Indonesia (bahasa ibu)" }, { en: "English (professional working proficiency)", id: "Bahasa Inggris (kemampuan profesional)" }] },
   ],
 
  
