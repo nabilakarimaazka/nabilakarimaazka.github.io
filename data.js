@@ -74,6 +74,7 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
+      // ★ Project asli — sumber: README, notebooks & laporan di repo GitHub (diperbarui 3 Nov 2026)
       title: { en: "Marketing Campaign A/B Test Analysis", id: "Analisis A/B Test Kampanye Marketing" },
       category: "Analytics",
       featured: false,
@@ -83,27 +84,27 @@ window.PORTFOLIO = {
       logo: "",
       repo: "nabilakarimaazka/marketing-ab-test-analysis",
       summary: {
-        en: "Evaluating whether an online ad campaign actually increases purchases, by comparing users who saw product ads with a hold-out group shown public service announcements — from experiment brief to SQL data checks and statistical testing.",
-        id: "Mengevaluasi apakah kampanye iklan online benar-benar meningkatkan pembelian, dengan membandingkan pengguna yang melihat iklan produk dan grup kontrol yang melihat iklan layanan masyarakat — mulai dari experiment brief, pengecekan data dengan SQL, sampai uji statistik.",
+        en: "End-to-end analysis of a marketing A/B test with 588,101 users: SQL (DuckDB) for data prep, a two-proportion z-test built from scratch, power analysis and segment analysis — ending in a clear business recommendation.",
+        id: "Analisis end-to-end sebuah A/B test marketing dengan 588.101 pengguna: SQL (DuckDB) untuk persiapan data, two-proportion z-test yang dibangun dari nol, power analysis, dan analisis segmen — ditutup dengan rekomendasi bisnis yang jelas.",
       },
       impact: [
-        { value: "+0.77 pp", label: { en: "conversion, ads vs control", id: "konversi, iklan vs kontrol" } },
-        { value: "~43%", label: { en: "relative lift (2.56% vs 1.79%)", id: "relative lift (2,56% vs 1,79%)" } },
-        { value: "588K", label: { en: "users checked with SQL", id: "pengguna dicek dengan SQL" } },
+        { value: "+0.77 pp", label: { en: "conversion lift (95% CI 0.60–0.94 pp)", id: "kenaikan konversi (CI 95% 0,60–0,94 pp)" } },
+        { value: "≈770", label: { en: "extra conversions per 100K users reached", id: "tambahan konversi per 100 ribu pengguna" } },
+        { value: "0.25 pp", label: { en: "min. detectable effect — well-powered test", id: "efek minimum yang terdeteksi — power memadai" } },
       ],
       problem: {
-        en: "The company ran an ad campaign and needed to know whether the ads truly drive conversions, how big the effect is, and whether it justifies the campaign cost. Only ~4% of users were held out as a control group, and the planned split was not documented.",
-        id: "Perusahaan menjalankan kampanye iklan dan perlu tahu apakah iklan benar-benar mendorong konversi, seberapa besar efeknya, dan apakah sepadan dengan biaya kampanye. Hanya ~4% pengguna yang dijadikan grup kontrol, dan rasio pembagian yang direncanakan tidak terdokumentasi.",
+        en: "Does the ad campaign increase conversions compared with a control group, by how much, and under which conditions is it most effective? The control group (~4% of users) saw public service announcements in the same ad slots, so the test measures product ads vs a placebo. The planned split was undocumented and there was no cost or revenue data.",
+        id: "Apakah kampanye iklan meningkatkan konversi dibandingkan grup kontrol, seberapa besar, dan dalam kondisi apa paling efektif? Grup kontrol (~4% pengguna) melihat iklan layanan masyarakat di slot iklan yang sama, jadi tes ini membandingkan iklan produk dengan plasebo. Rasio pembagian yang direncanakan tidak terdokumentasi dan tidak ada data biaya maupun pendapatan.",
       },
       approach: {
-        en: "Wrote an experiment brief first (two-sided hypotheses, α = 0.05, decision rules, threats to validity). Built a clean table in DuckDB and ran SQL data-quality checks: duplicates, users in both groups, missing values, valid ranges and allocation. Checked sample ratio mismatch (p = 0.9998 under an assumed 96/4 design). Next: two-proportion z-test, 95% CI, power/MDE and Bonferroni-corrected segment analysis.",
-        id: "Menyusun experiment brief lebih dulu (hipotesis dua arah, α = 0,05, aturan keputusan, ancaman validitas). Membuat tabel bersih di DuckDB dan menjalankan pengecekan kualitas data dengan SQL: duplikat, pengguna di dua grup, nilai kosong, rentang nilai, dan alokasi grup. Mengecek sample ratio mismatch (p = 0,9998 dengan asumsi desain 96/4). Berikutnya: two-proportion z-test, CI 95%, power/MDE, dan analisis segmen dengan koreksi Bonferroni.",
+        en: "Wrote the experiment brief before analysing (hypotheses, α = 0.05, decision rules). Checked data quality in SQL/DuckDB: duplicates, cross-group users, missing values, ranges and sample ratio mismatch. Ran a two-proportion z-test with a 95% CI and relative lift, implemented from scratch and validated against statsmodels. Added power analysis (MDE, 96/4 vs a hypothetical 50/50 split) and exploratory segment analysis by day, hour and ad exposure with Bonferroni correction across 36 tests.",
+        id: "Menulis experiment brief sebelum analisis (hipotesis, α = 0,05, aturan keputusan). Mengecek kualitas data dengan SQL/DuckDB: duplikat, pengguna di dua grup, nilai kosong, rentang nilai, dan sample ratio mismatch. Menjalankan two-proportion z-test dengan CI 95% dan relative lift, diimplementasikan dari nol dan divalidasi dengan statsmodels. Menambahkan power analysis (MDE, pembagian 96/4 vs 50/50 hipotetis) dan analisis segmen eksploratif berdasarkan hari, jam, dan paparan iklan dengan koreksi Bonferroni pada 36 uji.",
       },
       result: {
-        en: "Clean data: 588,101 unique users, no duplicates, no overlap between groups, no missing values. The ad group converts at 2.56% vs 1.79% for control (+0.77 percentage points, ~43% relative lift). Statistical significance and the final recommendation are in progress.",
-        id: "Data bersih: 588.101 pengguna unik, tanpa duplikat, tanpa pengguna di dua grup, tanpa nilai kosong. Grup iklan berkonversi 2,56% vs 1,79% untuk kontrol (+0,77 poin persentase, ~43% relative lift). Uji signifikansi statistik dan rekomendasi akhir sedang dikerjakan.",
+        en: "Ads work: 2.56% vs 1.79% conversion, +0.77 pp (95% CI 0.60–0.94 pp), ≈43% relative lift, p < 0.001 — about 770 extra conversions per 100,000 users reached. The lift is concentrated in users who saw 34+ ads (+3.80 pp) and is near zero for the other 80%; conversion also rises with exposure in the control group, so engagement is a likely confounder. Recommendation: continue the campaign, run a cost-benefit check before scaling, and test ad frequency in a follow-up experiment.",
+        id: "Iklan efektif: konversi 2,56% vs 1,79%, +0,77 pp (CI 95% 0,60–0,94 pp), ≈43% relative lift, p < 0,001 — sekitar 770 tambahan konversi per 100.000 pengguna. Kenaikan terkonsentrasi pada pengguna yang melihat 34+ iklan (+3,80 pp) dan hampir nol pada 80% pengguna lainnya; konversi juga naik seiring paparan di grup kontrol, sehingga engagement kemungkinan menjadi confounder. Rekomendasi: lanjutkan kampanye, lakukan analisis biaya-manfaat sebelum scale up, dan uji frekuensi iklan pada eksperimen lanjutan.",
       },
-      tags: ["SQL", "DuckDB", "Python", "A/B Testing", "SciPy", "Statistics"],
+      tags: ["SQL", "DuckDB", "Python", "statsmodels", "SciPy", "Matplotlib", "A/B Testing"],
       github: "https://github.com/nabilakarimaazka/marketing-ab-test-analysis",
       demo: "",
     },
