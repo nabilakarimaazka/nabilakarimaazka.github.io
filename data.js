@@ -125,7 +125,7 @@ window.PORTFOLIO = {
       role: "IT Governance Specialist",
       org: "Dinas Komunikasi Informatika Statistik dan Persandian · Onsite",
       type: "Full-time",
-      logo: "../images/kominfo.jpg",
+      logo: "../images/logo-kominfo.png",
       points: {
         en: [
           "Digitized 14+ public services that previously ran manually and undocumented, building a complaint intake system where each service records its data in a structured Google Sheet",
