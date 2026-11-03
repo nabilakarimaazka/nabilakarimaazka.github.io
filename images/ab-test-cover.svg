@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Inter, 'Segoe UI', Arial, sans-serif">
+  <!-- Cover for the A/B test project: conversion rate, ads vs control (numbers from the repo notebook) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="adBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+
+  <!-- title -->
+  <text x="36" y="52" fill="#ffffff" font-size="22" font-weight="700">Conversion rate by group</text>
+  <text x="36" y="76" fill="#bfdbfe" font-size="14">Marketing campaign A/B test · 588,101 users</text>
+
+  <!-- grid -->
+  <g stroke="#ffffff" stroke-opacity=".16" stroke-dasharray="4 6">
+    <line x1="36" x2="604" y1="130" y2="130"/>
+    <line x1="36" x2="604" y1="205" y2="205"/>
+    <line x1="36" x2="604" y1="280" y2="280"/>
+  </g>
+  <line x1="36" x2="604" y1="350" y2="350" stroke="#ffffff" stroke-opacity=".45" stroke-width="2"/>
+
+  <!-- bars: height scale 1% = 100px -->
+  <rect x="120" y="171" width="130" height="179" rx="10" fill="#ffffff" fill-opacity=".55"/>
+  <rect x="330" y="94"  width="130" height="256" rx="10" fill="url(#adBar)"/>
+
+  <!-- values -->
+  <text x="185" y="158" fill="#ffffff" font-size="30" font-weight="800" text-anchor="middle">1.79%</text>
+  <text x="395" y="81"  fill="#ffffff" font-size="30" font-weight="800" text-anchor="middle">2.56%</text>
+
+  <!-- labels -->
+  <text x="185" y="376" fill="#dbeafe" font-size="15" font-weight="600" text-anchor="middle">Control (PSA)</text>
+  <text x="395" y="376" fill="#dbeafe" font-size="15" font-weight="600" text-anchor="middle">Ads</text>
+
+  <!-- lift badge -->
+  <g transform="translate(486 122)">
+    <rect width="122" height="70" rx="14" fill="#ffffff"/>
+    <text x="61" y="34" fill="#1d4ed8" font-size="26" font-weight="800" text-anchor="middle">+0.77 pp</text>
+    <text x="61" y="55" fill="#475569" font-size="13" font-weight="600" text-anchor="middle">~43% lift</text>
+  </g>
+  <path d="M462 172 L484 160" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-opacity=".8"/>
+</svg>
