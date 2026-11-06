@@ -504,7 +504,8 @@ function coverArt(type, seed) {
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}</svg>`;
 }
 function cover(p, i, withTitle) {
-  if (p.image) return `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`;
+  // imagePosition (data.js) decides which part of a screenshot stays visible when the cover is cropped, e.g. "top"
+  if (p.image) return `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" style="object-position:${esc(p.imagePosition || "center")}">`;
   return coverArt(p.chart || "line", i + 1) + (withTitle
     ? `<div class="cover-title"><b>${esc(p.title)}</b><span>${esc(p.category)}</span></div>`
     : `<span class="cover-cat">${esc(p.category)}</span>`);
@@ -637,6 +638,7 @@ function renderProjects() {
             <div class="pactions">
               <button class="btn btn-outline btn-sm" type="button" data-details>${L("details")}</button>
               ${p.github ? `<a class="btn btn-primary btn-sm" href="${esc(p.github)}" target="_blank" rel="noopener">${icon.gh} ${L("viewCode")}</a>` : ""}
+              ${p.demo ? `<a class="btn btn-outline btn-sm" href="${esc(p.demo)}" target="_blank" rel="noopener">${icon.ext} ${L("liveDemo")}</a>` : ""}
               ${p.gh && p.gh.release ? `<span class="gh">● ${esc(p.gh.release.tag)}</span>` : ""}
             </div>
           </div>

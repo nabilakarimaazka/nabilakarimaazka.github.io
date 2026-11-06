@@ -74,6 +74,42 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
+      // ★ Project asli — sumber: README, SQL & screenshot dashboard di repo GitHub
+      title: { en: "DataCo Supply Chain Performance Dashboard", id: "Dashboard Performa Supply Chain DataCo" },
+      category: "Analytics",
+      featured: false,
+      image: "https://raw.githubusercontent.com/nabilakarimaazka/dataco-supply-chain-dashboard/main/images/page1_executive_overview.png",
+      imagePosition: "top",   // bagian screenshot yang tetap terlihat saat dipotong: "top", "center", "bottom"
+      chart: "bars",
+      date: { en: "Nov 2026", id: "Nov 2026" },
+      logo: "",
+      repo: "nabilakarimaazka/dataco-supply-chain-dashboard",
+      summary: {
+        en: "End-to-end BigQuery → Looker Studio dashboard on the DataCo supply chain dataset, answering three business questions about sales, late deliveries and profit leakage — with a live, interactive report.",
+        id: "Dashboard end-to-end BigQuery → Looker Studio pada dataset supply chain DataCo yang menjawab tiga pertanyaan bisnis tentang penjualan, keterlambatan pengiriman, dan kebocoran profit — dengan laporan interaktif yang bisa dibuka langsung.",
+      },
+      impact: [
+        { value: "57.3%", label: { en: "of orders delivered late — driven by shipping mode", id: "pesanan terlambat — dipengaruhi mode pengiriman" } },
+        { value: "57% → 34%", label: { en: "late rate if delivery promises are re-set (what-if)", id: "tingkat terlambat jika janji pengiriman disesuaikan (what-if)" } },
+        { value: "$3.5M", label: { en: "losses offsetting ~50% of the positive profit", id: "kerugian yang menggerus ~50% profit positif" } },
+      ],
+      problem: {
+        en: "Three business questions needed answers from the DataCo supply chain data: how sales, profit and orders are trending; how often deliveries arrive late and what causes it; and whether discounts hurt margin and where profit is leaking. The raw data also had issues: Spanish and inconsistent country names, personal-data columns, and an artefact after Sep 2017 where value per order collapsed.",
+        id: "Tiga pertanyaan bisnis perlu dijawab dari data supply chain DataCo: bagaimana tren penjualan, profit, dan jumlah pesanan; seberapa sering pengiriman terlambat dan apa penyebabnya; serta apakah diskon menekan margin dan di mana profit bocor. Data mentahnya juga bermasalah: nama negara berbahasa Spanyol dan tidak konsisten, kolom data pribadi, dan artefak setelah Sep 2017 saat nilai per pesanan anjlok.",
+      },
+      approach: {
+        en: "Modelled the data in BigQuery in three layers: raw tables, a staging view (snake_case columns, derived ship delay and late flag, personal data dropped) and a clustered fact table (1 row = 1 order item). Mapped 164 Spanish country names to English/ISO-2, limited the period to Jan 2015 – Sep 2017 after spotting the artefact, and counted only valid orders (excluding CANCELED and SUSPECTED_FRAUD) as distinct order IDs. Built a 3-page Looker Studio dashboard — executive overview, delivery performance, product & profitability — with calculated fields, date comparison and filters.",
+        id: "Memodelkan data di BigQuery dalam tiga lapisan: tabel raw, staging view (kolom snake_case, turunan keterlambatan pengiriman dan flag late, data pribadi dibuang), dan fact table yang di-cluster (1 baris = 1 item pesanan). Memetakan 164 nama negara Spanyol ke Inggris/ISO-2, membatasi periode Jan 2015 – Sep 2017 setelah menemukan artefak tersebut, dan hanya menghitung pesanan valid (tanpa CANCELED dan SUSPECTED_FRAUD) sebagai order ID unik. Membangun dashboard Looker Studio 3 halaman — ringkasan eksekutif, performa pengiriman, produk & profitabilitas — dengan calculated field, perbandingan tanggal, dan filter.",
+      },
+      result: {
+        en: "Profit grew about twice as fast as sales over the last 12 months (+7.0% vs +3.6%) while order count stayed flat, so growth came from higher value per order (margin 12.15%). 57.3% of valid orders arrive late, driven by shipping mode: First Class is always late (2 days vs a 1-day promise), Second Class ~80%, Standard ~40%. Re-setting promises to what is actually delivered would cut the late rate to ~34.1%. Discounts do not change margin, but ~19% of items sell at a loss, and those losses ($3.5M) offset about half of the $7.0M positive profit. Recommendations: align delivery promises with real performance by shipping mode, and investigate pricing and cost of loss-making items, starting with the lowest-margin categories. The dataset appears synthetic, so findings illustrate the analysis approach rather than a real company's performance.",
+        id: "Profit tumbuh sekitar dua kali lebih cepat dari penjualan dalam 12 bulan terakhir (+7,0% vs +3,6%) sementara jumlah pesanan datar, jadi pertumbuhan datang dari nilai per pesanan yang lebih tinggi (margin 12,15%). 57,3% pesanan valid terlambat, dipengaruhi mode pengiriman: First Class selalu terlambat (2 hari vs janji 1 hari), Second Class ~80%, Standard ~40%. Menyesuaikan janji dengan pengiriman yang sebenarnya akan menurunkan tingkat terlambat menjadi ~34,1%. Diskon tidak mengubah margin, tetapi ~19% item dijual rugi, dan kerugian itu ($3,5 juta) menggerus sekitar separuh dari profit positif $7,0 juta. Rekomendasi: sesuaikan janji pengiriman dengan performa nyata per mode pengiriman, dan selidiki harga serta biaya item yang rugi, mulai dari kategori dengan margin terendah. Dataset ini tampaknya sintetis, sehingga temuan menggambarkan pendekatan analisis, bukan performa perusahaan nyata.",
+      },
+      tags: ["BigQuery", "SQL", "Looker Studio", "Data Modeling", "Supply Chain"],
+      github: "https://github.com/nabilakarimaazka/dataco-supply-chain-dashboard",
+      demo: "https://datastudio.google.com/reporting/1186b0c8-aa28-40fa-b831-02dec486b713",
+    },
+    {
       // ★ Project asli — sumber: README, notebooks & laporan di repo GitHub (diperbarui 3 Nov 2026)
       title: { en: "Marketing Campaign A/B Test Analysis", id: "Analisis A/B Test Kampanye Marketing" },
       category: "Analytics",
