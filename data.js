@@ -24,7 +24,7 @@ window.PORTFOLIO = {
     email: "nabilakarimaazka@gmail.com",
     linkedin: "https://linkedin.com/in/nabilakarima",
     github: "https://github.com/nabilakarimaazka",
-    resume: "..doc/CV-Nabila Karima Azka-DA.pdf",
+    resume: "files/CV-Nabila-Karima-Azka.pdf",   // file CV (PDF) di folder "files"; kosongkan "" kalau tidak mau menampilkan
     photo: "images/rima.jpg",    // foto di kotak kanan atas, contoh: "images/me.jpg" (upload fotonya ke folder images)
   },
 
