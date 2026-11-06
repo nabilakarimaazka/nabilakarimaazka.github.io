@@ -14,7 +14,7 @@ window.PORTFOLIO = {
     greeting: { en: "Hi, I'm", id: "Hai, saya" },
     name: "Nabila Karima Azka",
     initials: "NK",
-    role: "Junior Data Scientist",
+    role: "Data Analyst / Data Scientist",
     status: { en: "Open to remote roles · Full-time & contract", id: "Terbuka untuk kerja remote · Full-time & kontrak" },
     intro: {
       en: "I build machine learning models, analytics pipelines and dashboards that teams actually use — from problem framing to production. Focused on forecasting, NLP and customer analytics.",
@@ -154,7 +154,7 @@ window.PORTFOLIO = {
     { icon: "▦", name: { en: "BI & Visualization", id: "BI & Visualisasi" }, note: { en: "Communicating results", id: "Menyampaikan hasil" },
       items: ["Power BI", "Tableau", "Looker Studio", "KNIME", "Excel", "Google Sheets"] },
     { icon: "☁", name: { en: "Platforms & Tools", id: "Platform & Tools" }, note: { en: "Workflow & collaboration", id: "Alur kerja & kolaborasi" },
-      items: ["Microsoft Fabric", "Google Workspace", "Git/GitHub", "Jupyter Notebook"] },
+      items: ["BigQuery","Microsoft Fabric", "Google Workspace", "Git/GitHub", "Jupyter Notebook"] },
     { icon: "◎", name: { en: "Languages", id: "Bahasa" }, note: { en: "Spoken", id: "Bahasa lisan" },
       items: [{ en: "Indonesian (native)", id: "Bahasa Indonesia (bahasa ibu)" }, { en: "English (professional working proficiency)", id: "Bahasa Inggris (kemampuan profesional)" }] },
   ],
@@ -272,7 +272,7 @@ window.PORTFOLIO = {
       url: "https://coursera.org/share/db9e6f61cd24de8632fe235fc592badc",
       logo: "../images/google.png",
       image: "",
-      skills: ["Data Processing", "Data Visualization", "SQL", "Pyhton", "Spreadsheet", "Analytical Skills"],
+      skills: ["Data Processing", "Data Visualization", "SQL", "Python", "Spreadsheet", "Analytical Skills"],
     },
     {
       title: { en: "Applying Data Science with Microsoft Fabric", id: "Applying Data Science with Microsoft Fabric" },
