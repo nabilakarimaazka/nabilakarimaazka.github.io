@@ -20,7 +20,7 @@ window.PORTFOLIO = {
       en: "I build machine learning models, analytics pipelines and dashboards that teams actually use — from problem framing to production. Focused on forecasting, NLP and customer analytics.",
       id: "Saya membangun model machine learning, pipeline analitik, dan dashboard yang benar-benar dipakai tim — mulai dari merumuskan masalah sampai ke produksi. Fokus pada forecasting, NLP, dan customer analytics.",
     },
-    location: "Indonesia · GMT+7",
+    location: "Indonesia",
     email: "nabilakarimaazka@gmail.com",
     linkedin: "https://linkedin.com/in/nabilakarima",
     github: "https://github.com/nabilakarimaazka",
@@ -31,7 +31,7 @@ window.PORTFOLIO = {
   // Angka besar di kartu bawah nama. Bisa 1 atau 2 kartu.
   heroKpis: [
     { value: { en: "2+ yrs", id: "2+ thn" }, label: { en: "Years of experience", id: "Pengalaman" } },
-    { value: "2", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
+    { value: "3+", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
   ],
 
   // Chip di kartu "Tech stack"
