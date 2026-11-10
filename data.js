@@ -74,6 +74,42 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
+      // ★ Project asli — sumber: README, script verifikasi & screenshot dashboard di repo GitHub
+      title: { en: "King County House Price Dashboard", id: "Dashboard Harga Rumah King County" },
+      category: "Analytics",
+      featured: false,
+      image: "https://raw.githubusercontent.com/nabilakarimaazka/king-county-house-price-dashboard/main/images/dashboard.png",
+      imagePosition: "top",   // bagian screenshot yang tetap terlihat saat dipotong: "top", "center", "bottom"
+      chart: "bars",
+      date: { en: "Nov 2026", id: "Nov 2026" },
+      logo: "",
+      repo: "nabilakarimaazka/king-county-house-price-dashboard",
+      summary: {
+        en: "Interactive Tableau Public dashboard on 21,613 King County home sales that shows what drives a house's sale price and how sellers and buyers can price and time a sale — with a Python script that reproduces every finding.",
+        id: "Dashboard interaktif Tableau Public atas 21.613 transaksi rumah di King County yang menunjukkan apa yang menentukan harga jual rumah dan bagaimana penjual serta pembeli bisa menentukan harga dan waktu jual — dengan script Python yang mereproduksi setiap temuan.",
+      },
+      impact: [
+        { value: "$445K", label: { en: "typical (median) home sale price", id: "harga jual rumah tipikal (median)" } },
+        { value: "3.9×", label: { en: "price gap between the priciest and cheapest zip codes", id: "selisih harga antara kode pos termahal dan termurah" } },
+        { value: "+36%", label: { en: "median price jump from build grade 7 to 8", id: "kenaikan harga median dari grade bangunan 7 ke 8" } },
+      ],
+      problem: {
+        en: "Real estate agents in King County, WA price listings and advise buyers every day: price too high and a home sits unsold, too low and money is left on the table. Buyers on a budget also need to know where and when they get the most house for their money. The question: what drives a home's sale price, and how should sellers and buyers use that to price and time a sale?",
+        id: "Agen properti di King County, WA menentukan harga listing dan menasihati pembeli setiap hari: harga terlalu tinggi membuat rumah tidak laku, terlalu rendah membuat uang terbuang. Pembeli dengan anggaran terbatas juga perlu tahu di mana dan kapan mereka bisa mendapat rumah terbaik. Pertanyaannya: apa yang menentukan harga jual rumah, dan bagaimana penjual serta pembeli memanfaatkannya untuk menentukan harga dan waktu jual?",
+      },
+      approach: {
+        en: "Used 21,613 sales (May 2014 – May 2015, 70 zip codes) from Kaggle and documented each data decision: excluded the 535 sales above ~$1.49M (2.5%) and used the median instead of the mean, mapped numeric view and condition scores to readable labels, flagged a 33-bedroom, 1,620 sq ft house as a likely entry error, kept 177 re-sold houses as separate transactions, and read trends monthly because only 2.4% of sales fall on weekends. Built an interactive Tableau dashboard (calendar and range filters, price map by zip code, view × condition heatmap, price/bedroom/bathroom distributions) and a pandas script that reproduces every number.",
+        id: "Memakai 21.613 transaksi (Mei 2014 – Mei 2015, 70 kode pos) dari Kaggle dan mendokumentasikan setiap keputusan data: mengecualikan 535 transaksi di atas ~$1,49 juta (2,5%) dan memakai median, bukan rata-rata; mengubah skor numerik view dan condition menjadi label yang mudah dibaca; menandai rumah dengan 33 kamar tidur dan 1.620 sq ft sebagai kemungkinan salah input; menjaga 177 rumah yang terjual dua kali sebagai transaksi terpisah; dan membaca tren per bulan karena hanya 2,4% transaksi terjadi di akhir pekan. Membangun dashboard Tableau interaktif (filter kalender dan rentang, peta harga per kode pos, heatmap view × condition, distribusi harga/kamar tidur/kamar mandi) dan script pandas yang mereproduksi semua angka.",
+      },
+      result: {
+        en: "A typical home sold for $445,000. Spring is the seller's market: median price rose ~10% from February to April 2015 while sales volume more than doubled. Location is the biggest lever (3.9× gap between zip codes). Living area and build grade drive price (correlation 0.66 each; grade 7→8 means +36%), while condition barely matters (0.04). An excellent view more than doubles the price ($912.5K vs $430K), and more bedrooms raise the price but make each square foot cheaper. Recommendations: list in March–June, price from the zip code's median price per sq ft × living area then adjust for grade and view, advise investing in build quality over cosmetic fixes, and point budget buyers to south King County. Limits: one year of data and correlation is not causation.",
+        id: "Rumah tipikal terjual seharga $445.000. Musim semi adalah pasar penjual: harga median naik ~10% dari Februari ke April 2015 sementara volume penjualan lebih dari dua kali lipat. Lokasi adalah faktor terbesar (selisih 3,9× antar kode pos). Luas bangunan dan grade konstruksi menentukan harga (korelasi masing-masing 0,66; grade 7→8 berarti +36%), sedangkan kondisi nyaris tidak berpengaruh (0,04). View yang sangat baik melipatgandakan harga lebih dari dua kali ($912,5 ribu vs $430 ribu), dan lebih banyak kamar tidur menaikkan harga tetapi membuat harga per sq ft lebih murah. Rekomendasi: pasang listing pada Maret–Juni, tentukan harga dari median harga per sq ft kode pos × luas bangunan lalu sesuaikan dengan grade dan view, sarankan investasi pada kualitas bangunan ketimbang perbaikan kosmetik, dan arahkan pembeli ber-budget ke King County bagian selatan. Keterbatasan: data hanya satu tahun dan korelasi bukan kausalitas.",
+      },
+      tags: ["Tableau", "Python", "pandas", "Data Visualization", "Real Estate"],
+      github: "https://github.com/nabilakarimaazka/king-county-house-price-dashboard",
+      demo: "https://public.tableau.com/views/DashboardHousePrice/Dashboard1",
+    },
+    {
       // ★ Project asli — sumber: README, SQL & screenshot dashboard di repo GitHub
       title: { en: "DataCo Supply Chain Performance Dashboard", id: "Dashboard Performa Supply Chain DataCo" },
       category: "Analytics",
@@ -276,7 +312,7 @@ window.PORTFOLIO = {
     },
     {
       title: { en: "Applying Data Science with Microsoft Fabric", id: "Applying Data Science with Microsoft Fabric" },
-      issuer: "Microfost · Dicoding",
+      issuer: "Microsoft · Dicoding",
       date: "Sept 2026",
       credentialId: "",
       url: "https://www.dicoding.com/certificates/JLX1K29QJP72",
