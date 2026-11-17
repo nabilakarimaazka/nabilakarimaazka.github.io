@@ -17,8 +17,8 @@ window.PORTFOLIO = {
     role: "Data Analyst / Data Scientist",
     status: { en: "Open to remote roles · Full-time & contract", id: "Terbuka untuk kerja remote · Full-time & kontrak" },
     intro: {
-      en: "I build machine learning models, analytics pipelines and dashboards that teams actually use — from problem framing to production. Focused on forecasting, NLP and customer analytics.",
-      id: "Saya membangun model machine learning, pipeline analitik, dan dashboard yang benar-benar dipakai tim — mulai dari merumuskan masalah sampai ke produksi. Fokus pada forecasting, NLP, dan customer analytics.",
+      en: "Data Analyst turning raw operational and customer data into predictive models, KPI dashboards and automated reporting. Built a repeat-purchase model at Tunas Honda and digitized 14+ public services into one ticketing system in local government. Skilled in SQL, Python, A/B testing and Google Apps Script.",
+      id: "Data Analyst yang mengubah data operasional dan pelanggan mentah menjadi model prediktif, dashboard KPI, dan pelaporan otomatis. Membangun model prediksi pembelian ulang di Tunas Honda dan mendigitalkan 14+ layanan publik ke satu sistem tiket di pemerintah daerah. Mahir SQL, Python, A/B testing, dan Google Apps Script.",
     },
     location: "Indonesia",
     email: "nabilakarimaazka@gmail.com",
