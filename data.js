@@ -31,7 +31,7 @@ window.PORTFOLIO = {
   // Angka besar di kartu bawah nama. Bisa 1 atau 2 kartu.
   heroKpis: [
     { value: { en: "2+ yrs", id: "2+ thn" }, label: { en: "Years of experience", id: "Pengalaman" } },
-    { value: "3+", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
+    { value: "5", label: { en: "End-to-end projects", id: "Proyek end-to-end" } },
   ],
 
   // Chip di kartu "Tech stack"
@@ -40,9 +40,45 @@ window.PORTFOLIO = {
   
   projects: [
     {
-      title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
+      // ★ Project asli — sumber: README, notebooks & demo online di repo GitHub
+      title: { en: "Credit Risk Prediction & Scoring API", id: "Prediksi Risiko Kredit & API Scoring" },
       category: "Machine Learning",
       featured: true,
+      image: "https://raw.githubusercontent.com/nabilakarimaazka/credit-risk-prediction/main/docs/preview.png",
+      imagePosition: "top",   // bagian screenshot yang tetap terlihat saat dipotong: "top", "center", "bottom"
+      chart: "bars",
+      date: { en: "Nov 2026", id: "Nov 2026" },
+      logo: "",
+      repo: "nabilakarimaazka/credit-risk-prediction",
+      summary: {
+        en: "Predicts which loan applicants are likely to default and turns the model's score into a cost-based approve / review / reject decision — shipped as a FastAPI scoring API with a web interface and a live demo.",
+        id: "Memprediksi peminjam yang berisiko gagal bayar dan mengubah skor model menjadi keputusan setuju / tinjau / tolak berbasis biaya — disajikan sebagai API scoring FastAPI dengan tampilan web dan demo online.",
+      },
+      impact: [
+        { value: "0.943", label: { en: "ROC-AUC on unseen data (PR-AUC 0.895)", id: "ROC-AUC pada data uji (PR-AUC 0,895)" } },
+        { value: "-23%", label: { en: "total error cost with a cost-based threshold", id: "total biaya kesalahan dengan threshold berbasis biaya" } },
+        { value: "72%", label: { en: "of all defaults sit in the 16% highest-risk applicants", id: "dari seluruh gagal bayar ada di 16% peminjam paling berisiko" } },
+      ],
+      problem: {
+        en: "A lender approves loans for many applicants. Most repay, but about 21.5% default, and at application time nobody knows who. The goal: give every applicant a risk score so risky applications can be reviewed before approval, while good borrowers keep flowing through quickly.",
+        id: "Pemberi pinjaman menyetujui pinjaman untuk banyak orang. Sebagian besar membayar lancar, tetapi sekitar 21,5% gagal bayar, dan saat pengajuan belum ada yang tahu siapa. Tujuannya: memberi setiap peminjam skor risiko agar pengajuan berisiko bisa ditinjau sebelum disetujui, sementara peminjam yang baik tetap diproses cepat.",
+      },
+      approach: {
+        en: "Cleaned 31,677 loans (impossible values removed), split 80/20 with preprocessing fit on train only, and compared Logistic Regression with CatBoost using class weights. Evaluated with ROC-AUC, PR-AUC, SHAP and calibration, then chose the decision threshold by cost ($500 per missed default vs $50 per wrongly rejected borrower) and defined four risk tiers. Shipped it as a FastAPI service with input validation and a web page, and slimmed the deployment from ~600 MB to ~130 MB by exporting CatBoost to pure Python — with identical outputs on all 31,677 rows.",
+        id: "Membersihkan 31.677 pinjaman (nilai mustahil dibuang), split 80/20 dengan preprocessing hanya di data train, dan membandingkan Logistic Regression dengan CatBoost memakai bobot kelas. Dievaluasi dengan ROC-AUC, PR-AUC, SHAP, dan kalibrasi, lalu threshold keputusan dipilih berdasarkan biaya ($500 per gagal bayar yang lolos vs $50 per peminjam baik yang ditolak) dan dibuat empat risk tier. Disajikan sebagai layanan FastAPI dengan validasi input dan halaman web, dan ukuran deploy diperkecil dari ~600 MB menjadi ~130 MB dengan mengekspor CatBoost ke Python murni — dengan hasil identik di seluruh 31.677 baris.",
+      },
+      result: {
+        en: "CatBoost reached ROC-AUC 0.943 (train 0.956, so no meaningful overfitting) and PR-AUC 0.895 vs 0.732 for logistic regression. Moving the threshold from 0.50 to 0.24 raises defaults caught from 79% to 93% and cuts total error cost by 23% ($157,000 to $121,300). The Low Risk tier (56% of applicants) defaults only 2.6%, while the Very High Risk tier (16%) holds about 72% of all defaults. Top drivers: loan-to-income ratio, home ownership, income, interest rate and loan grade. Limits: the $500 / $50 costs are assumptions, and the threshold was chosen on the same test set.",
+        id: "CatBoost mencapai ROC-AUC 0,943 (train 0,956, jadi tidak ada overfitting berarti) dan PR-AUC 0,895 dibanding 0,732 untuk logistic regression. Menggeser threshold dari 0,50 ke 0,24 menaikkan gagal bayar yang tertangkap dari 79% menjadi 93% dan memangkas total biaya kesalahan 23% ($157.000 menjadi $121.300). Tier Low Risk (56% peminjam) hanya 2,6% gagal bayar, sedangkan tier Very High Risk (16%) memuat sekitar 72% seluruh gagal bayar. Faktor utama: rasio pinjaman terhadap pendapatan, status tempat tinggal, pendapatan, suku bunga, dan grade pinjaman. Keterbatasan: biaya $500 / $50 adalah asumsi, dan threshold dipilih pada data test yang sama.",
+      },
+      tags: ["Python", "CatBoost", "SHAP", "FastAPI", "scikit-learn", "Vercel"],
+      github: "https://github.com/nabilakarimaazka/credit-risk-prediction",
+      demo: "https://credit-risk-prediction-five.vercel.app",
+    },
+    {
+      title: { en: "Customer Repeat Order Prediction", id: "Prediksi Repeat Order Pelanggan" },
+      category: "Machine Learning",
+      featured: false,
       image: "https://raw.githubusercontent.com/nabilakarimaazka/customer-repeat-order-prediction/main/docs/prospects.png",
       chart: "bars",
       date: { en: "Sep — Oct 2026", id: "Sep — Okt 2026" },
@@ -74,40 +110,39 @@ window.PORTFOLIO = {
       demo: "",
     },
     {
-      // ★ Project asli — sumber: README, script verifikasi & screenshot dashboard di repo GitHub
-      title: { en: "King County House Price Dashboard", id: "Dashboard Harga Rumah King County" },
+      // ★ Project asli — sumber: README, notebooks & laporan di repo GitHub (diperbarui 3 Nov 2026)
+      title: { en: "Marketing Campaign A/B Test Analysis", id: "Analisis A/B Test Kampanye Marketing" },
       category: "Analytics",
       featured: false,
-      image: "https://raw.githubusercontent.com/nabilakarimaazka/king-county-house-price-dashboard/main/images/dashboard.png",
-      imagePosition: "top",   // bagian screenshot yang tetap terlihat saat dipotong: "top", "center", "bottom"
+      image: "images/ab-test-cover.svg",   // grafik hasil: konversi iklan vs kontrol
       chart: "bars",
       date: { en: "Nov 2026", id: "Nov 2026" },
       logo: "",
-      repo: "nabilakarimaazka/king-county-house-price-dashboard",
+      repo: "nabilakarimaazka/marketing-ab-test-analysis",
       summary: {
-        en: "Interactive Tableau Public dashboard on 21,613 King County home sales that shows what drives a house's sale price and how sellers and buyers can price and time a sale — with a Python script that reproduces every finding.",
-        id: "Dashboard interaktif Tableau Public atas 21.613 transaksi rumah di King County yang menunjukkan apa yang menentukan harga jual rumah dan bagaimana penjual serta pembeli bisa menentukan harga dan waktu jual — dengan script Python yang mereproduksi setiap temuan.",
+        en: "End-to-end analysis of a marketing A/B test with 588,101 users: SQL (DuckDB) for data prep, a two-proportion z-test built from scratch, power analysis and segment analysis — ending in a clear business recommendation.",
+        id: "Analisis end-to-end sebuah A/B test marketing dengan 588.101 pengguna: SQL (DuckDB) untuk persiapan data, two-proportion z-test yang dibangun dari nol, power analysis, dan analisis segmen — ditutup dengan rekomendasi bisnis yang jelas.",
       },
       impact: [
-        { value: "$445K", label: { en: "typical (median) home sale price", id: "harga jual rumah tipikal (median)" } },
-        { value: "3.9×", label: { en: "price gap between the priciest and cheapest zip codes", id: "selisih harga antara kode pos termahal dan termurah" } },
-        { value: "+36%", label: { en: "median price jump from build grade 7 to 8", id: "kenaikan harga median dari grade bangunan 7 ke 8" } },
+        { value: "+0.77 pp", label: { en: "conversion lift (95% CI 0.60–0.94 pp)", id: "kenaikan konversi (CI 95% 0,60–0,94 pp)" } },
+        { value: "≈770", label: { en: "extra conversions per 100K users reached", id: "tambahan konversi per 100 ribu pengguna" } },
+        { value: "0.25 pp", label: { en: "min. detectable effect — well-powered test", id: "efek minimum yang terdeteksi — power memadai" } },
       ],
       problem: {
-        en: "Real estate agents in King County, WA price listings and advise buyers every day: price too high and a home sits unsold, too low and money is left on the table. Buyers on a budget also need to know where and when they get the most house for their money. The question: what drives a home's sale price, and how should sellers and buyers use that to price and time a sale?",
-        id: "Agen properti di King County, WA menentukan harga listing dan menasihati pembeli setiap hari: harga terlalu tinggi membuat rumah tidak laku, terlalu rendah membuat uang terbuang. Pembeli dengan anggaran terbatas juga perlu tahu di mana dan kapan mereka bisa mendapat rumah terbaik. Pertanyaannya: apa yang menentukan harga jual rumah, dan bagaimana penjual serta pembeli memanfaatkannya untuk menentukan harga dan waktu jual?",
+        en: "Does the ad campaign increase conversions compared with a control group, by how much, and under which conditions is it most effective? The control group (~4% of users) saw public service announcements in the same ad slots, so the test measures product ads vs a placebo. The planned split was undocumented and there was no cost or revenue data.",
+        id: "Apakah kampanye iklan meningkatkan konversi dibandingkan grup kontrol, seberapa besar, dan dalam kondisi apa paling efektif? Grup kontrol (~4% pengguna) melihat iklan layanan masyarakat di slot iklan yang sama, jadi tes ini membandingkan iklan produk dengan plasebo. Rasio pembagian yang direncanakan tidak terdokumentasi dan tidak ada data biaya maupun pendapatan.",
       },
       approach: {
-        en: "Used 21,613 sales (May 2014 – May 2015, 70 zip codes) from Kaggle and documented each data decision: excluded the 535 sales above ~$1.49M (2.5%) and used the median instead of the mean, mapped numeric view and condition scores to readable labels, flagged a 33-bedroom, 1,620 sq ft house as a likely entry error, kept 177 re-sold houses as separate transactions, and read trends monthly because only 2.4% of sales fall on weekends. Built an interactive Tableau dashboard (calendar and range filters, price map by zip code, view × condition heatmap, price/bedroom/bathroom distributions) and a pandas script that reproduces every number.",
-        id: "Memakai 21.613 transaksi (Mei 2014 – Mei 2015, 70 kode pos) dari Kaggle dan mendokumentasikan setiap keputusan data: mengecualikan 535 transaksi di atas ~$1,49 juta (2,5%) dan memakai median, bukan rata-rata; mengubah skor numerik view dan condition menjadi label yang mudah dibaca; menandai rumah dengan 33 kamar tidur dan 1.620 sq ft sebagai kemungkinan salah input; menjaga 177 rumah yang terjual dua kali sebagai transaksi terpisah; dan membaca tren per bulan karena hanya 2,4% transaksi terjadi di akhir pekan. Membangun dashboard Tableau interaktif (filter kalender dan rentang, peta harga per kode pos, heatmap view × condition, distribusi harga/kamar tidur/kamar mandi) dan script pandas yang mereproduksi semua angka.",
+        en: "Wrote the experiment brief before analysing (hypotheses, α = 0.05, decision rules). Checked data quality in SQL/DuckDB: duplicates, cross-group users, missing values, ranges and sample ratio mismatch. Ran a two-proportion z-test with a 95% CI and relative lift, implemented from scratch and validated against statsmodels. Added power analysis (MDE, 96/4 vs a hypothetical 50/50 split) and exploratory segment analysis by day, hour and ad exposure with Bonferroni correction across 36 tests.",
+        id: "Menulis experiment brief sebelum analisis (hipotesis, α = 0,05, aturan keputusan). Mengecek kualitas data dengan SQL/DuckDB: duplikat, pengguna di dua grup, nilai kosong, rentang nilai, dan sample ratio mismatch. Menjalankan two-proportion z-test dengan CI 95% dan relative lift, diimplementasikan dari nol dan divalidasi dengan statsmodels. Menambahkan power analysis (MDE, pembagian 96/4 vs 50/50 hipotetis) dan analisis segmen eksploratif berdasarkan hari, jam, dan paparan iklan dengan koreksi Bonferroni pada 36 uji.",
       },
       result: {
-        en: "A typical home sold for $445,000. Spring is the seller's market: median price rose ~10% from February to April 2015 while sales volume more than doubled. Location is the biggest lever (3.9× gap between zip codes). Living area and build grade drive price (correlation 0.66 each; grade 7→8 means +36%), while condition barely matters (0.04). An excellent view more than doubles the price ($912.5K vs $430K), and more bedrooms raise the price but make each square foot cheaper. Recommendations: list in March–June, price from the zip code's median price per sq ft × living area then adjust for grade and view, advise investing in build quality over cosmetic fixes, and point budget buyers to south King County. Limits: one year of data and correlation is not causation.",
-        id: "Rumah tipikal terjual seharga $445.000. Musim semi adalah pasar penjual: harga median naik ~10% dari Februari ke April 2015 sementara volume penjualan lebih dari dua kali lipat. Lokasi adalah faktor terbesar (selisih 3,9× antar kode pos). Luas bangunan dan grade konstruksi menentukan harga (korelasi masing-masing 0,66; grade 7→8 berarti +36%), sedangkan kondisi nyaris tidak berpengaruh (0,04). View yang sangat baik melipatgandakan harga lebih dari dua kali ($912,5 ribu vs $430 ribu), dan lebih banyak kamar tidur menaikkan harga tetapi membuat harga per sq ft lebih murah. Rekomendasi: pasang listing pada Maret–Juni, tentukan harga dari median harga per sq ft kode pos × luas bangunan lalu sesuaikan dengan grade dan view, sarankan investasi pada kualitas bangunan ketimbang perbaikan kosmetik, dan arahkan pembeli ber-budget ke King County bagian selatan. Keterbatasan: data hanya satu tahun dan korelasi bukan kausalitas.",
+        en: "Ads work: 2.56% vs 1.79% conversion, +0.77 pp (95% CI 0.60–0.94 pp), ≈43% relative lift, p < 0.001 — about 770 extra conversions per 100,000 users reached. The lift is concentrated in users who saw 34+ ads (+3.80 pp) and is near zero for the other 80%; conversion also rises with exposure in the control group, so engagement is a likely confounder. Recommendation: continue the campaign, run a cost-benefit check before scaling, and test ad frequency in a follow-up experiment.",
+        id: "Iklan efektif: konversi 2,56% vs 1,79%, +0,77 pp (CI 95% 0,60–0,94 pp), ≈43% relative lift, p < 0,001 — sekitar 770 tambahan konversi per 100.000 pengguna. Kenaikan terkonsentrasi pada pengguna yang melihat 34+ iklan (+3,80 pp) dan hampir nol pada 80% pengguna lainnya; konversi juga naik seiring paparan di grup kontrol, sehingga engagement kemungkinan menjadi confounder. Rekomendasi: lanjutkan kampanye, lakukan analisis biaya-manfaat sebelum scale up, dan uji frekuensi iklan pada eksperimen lanjutan.",
       },
-      tags: ["Tableau", "Python", "pandas", "Data Visualization", "Real Estate"],
-      github: "https://github.com/nabilakarimaazka/king-county-house-price-dashboard",
-      demo: "https://public.tableau.com/views/DashboardHousePrice/Dashboard1",
+      tags: ["SQL", "DuckDB", "Python", "statsmodels", "SciPy", "Matplotlib", "A/B Testing"],
+      github: "https://github.com/nabilakarimaazka/marketing-ab-test-analysis",
+      demo: "",
     },
     {
       // ★ Project asli — sumber: README, SQL & screenshot dashboard di repo GitHub
@@ -146,39 +181,40 @@ window.PORTFOLIO = {
       demo: "https://datastudio.google.com/reporting/1186b0c8-aa28-40fa-b831-02dec486b713",
     },
     {
-      // ★ Project asli — sumber: README, notebooks & laporan di repo GitHub (diperbarui 3 Nov 2026)
-      title: { en: "Marketing Campaign A/B Test Analysis", id: "Analisis A/B Test Kampanye Marketing" },
+      // ★ Project asli — sumber: README, script verifikasi & screenshot dashboard di repo GitHub
+      title: { en: "King County House Price Dashboard", id: "Dashboard Harga Rumah King County" },
       category: "Analytics",
       featured: false,
-      image: "images/ab-test-cover.svg",   // grafik hasil: konversi iklan vs kontrol
+      image: "https://raw.githubusercontent.com/nabilakarimaazka/king-county-house-price-dashboard/main/images/dashboard.png",
+      imagePosition: "top",   // bagian screenshot yang tetap terlihat saat dipotong: "top", "center", "bottom"
       chart: "bars",
       date: { en: "Nov 2026", id: "Nov 2026" },
       logo: "",
-      repo: "nabilakarimaazka/marketing-ab-test-analysis",
+      repo: "nabilakarimaazka/king-county-house-price-dashboard",
       summary: {
-        en: "End-to-end analysis of a marketing A/B test with 588,101 users: SQL (DuckDB) for data prep, a two-proportion z-test built from scratch, power analysis and segment analysis — ending in a clear business recommendation.",
-        id: "Analisis end-to-end sebuah A/B test marketing dengan 588.101 pengguna: SQL (DuckDB) untuk persiapan data, two-proportion z-test yang dibangun dari nol, power analysis, dan analisis segmen — ditutup dengan rekomendasi bisnis yang jelas.",
+        en: "Interactive Tableau Public dashboard on 21,613 King County home sales that shows what drives a house's sale price and how sellers and buyers can price and time a sale — with a Python script that reproduces every finding.",
+        id: "Dashboard interaktif Tableau Public atas 21.613 transaksi rumah di King County yang menunjukkan apa yang menentukan harga jual rumah dan bagaimana penjual serta pembeli bisa menentukan harga dan waktu jual — dengan script Python yang mereproduksi setiap temuan.",
       },
       impact: [
-        { value: "+0.77 pp", label: { en: "conversion lift (95% CI 0.60–0.94 pp)", id: "kenaikan konversi (CI 95% 0,60–0,94 pp)" } },
-        { value: "≈770", label: { en: "extra conversions per 100K users reached", id: "tambahan konversi per 100 ribu pengguna" } },
-        { value: "0.25 pp", label: { en: "min. detectable effect — well-powered test", id: "efek minimum yang terdeteksi — power memadai" } },
+        { value: "$445K", label: { en: "typical (median) home sale price", id: "harga jual rumah tipikal (median)" } },
+        { value: "3.9×", label: { en: "price gap between the priciest and cheapest zip codes", id: "selisih harga antara kode pos termahal dan termurah" } },
+        { value: "+36%", label: { en: "median price jump from build grade 7 to 8", id: "kenaikan harga median dari grade bangunan 7 ke 8" } },
       ],
       problem: {
-        en: "Does the ad campaign increase conversions compared with a control group, by how much, and under which conditions is it most effective? The control group (~4% of users) saw public service announcements in the same ad slots, so the test measures product ads vs a placebo. The planned split was undocumented and there was no cost or revenue data.",
-        id: "Apakah kampanye iklan meningkatkan konversi dibandingkan grup kontrol, seberapa besar, dan dalam kondisi apa paling efektif? Grup kontrol (~4% pengguna) melihat iklan layanan masyarakat di slot iklan yang sama, jadi tes ini membandingkan iklan produk dengan plasebo. Rasio pembagian yang direncanakan tidak terdokumentasi dan tidak ada data biaya maupun pendapatan.",
+        en: "Real estate agents in King County, WA price listings and advise buyers every day: price too high and a home sits unsold, too low and money is left on the table. Buyers on a budget also need to know where and when they get the most house for their money. The question: what drives a home's sale price, and how should sellers and buyers use that to price and time a sale?",
+        id: "Agen properti di King County, WA menentukan harga listing dan menasihati pembeli setiap hari: harga terlalu tinggi membuat rumah tidak laku, terlalu rendah membuat uang terbuang. Pembeli dengan anggaran terbatas juga perlu tahu di mana dan kapan mereka bisa mendapat rumah terbaik. Pertanyaannya: apa yang menentukan harga jual rumah, dan bagaimana penjual serta pembeli memanfaatkannya untuk menentukan harga dan waktu jual?",
       },
       approach: {
-        en: "Wrote the experiment brief before analysing (hypotheses, α = 0.05, decision rules). Checked data quality in SQL/DuckDB: duplicates, cross-group users, missing values, ranges and sample ratio mismatch. Ran a two-proportion z-test with a 95% CI and relative lift, implemented from scratch and validated against statsmodels. Added power analysis (MDE, 96/4 vs a hypothetical 50/50 split) and exploratory segment analysis by day, hour and ad exposure with Bonferroni correction across 36 tests.",
-        id: "Menulis experiment brief sebelum analisis (hipotesis, α = 0,05, aturan keputusan). Mengecek kualitas data dengan SQL/DuckDB: duplikat, pengguna di dua grup, nilai kosong, rentang nilai, dan sample ratio mismatch. Menjalankan two-proportion z-test dengan CI 95% dan relative lift, diimplementasikan dari nol dan divalidasi dengan statsmodels. Menambahkan power analysis (MDE, pembagian 96/4 vs 50/50 hipotetis) dan analisis segmen eksploratif berdasarkan hari, jam, dan paparan iklan dengan koreksi Bonferroni pada 36 uji.",
+        en: "Used 21,613 sales (May 2014 – May 2015, 70 zip codes) from Kaggle and documented each data decision: excluded the 535 sales above ~$1.49M (2.5%) and used the median instead of the mean, mapped numeric view and condition scores to readable labels, flagged a 33-bedroom, 1,620 sq ft house as a likely entry error, kept 177 re-sold houses as separate transactions, and read trends monthly because only 2.4% of sales fall on weekends. Built an interactive Tableau dashboard (calendar and range filters, price map by zip code, view × condition heatmap, price/bedroom/bathroom distributions) and a pandas script that reproduces every number.",
+        id: "Memakai 21.613 transaksi (Mei 2014 – Mei 2015, 70 kode pos) dari Kaggle dan mendokumentasikan setiap keputusan data: mengecualikan 535 transaksi di atas ~$1,49 juta (2,5%) dan memakai median, bukan rata-rata; mengubah skor numerik view dan condition menjadi label yang mudah dibaca; menandai rumah dengan 33 kamar tidur dan 1.620 sq ft sebagai kemungkinan salah input; menjaga 177 rumah yang terjual dua kali sebagai transaksi terpisah; dan membaca tren per bulan karena hanya 2,4% transaksi terjadi di akhir pekan. Membangun dashboard Tableau interaktif (filter kalender dan rentang, peta harga per kode pos, heatmap view × condition, distribusi harga/kamar tidur/kamar mandi) dan script pandas yang mereproduksi semua angka.",
       },
       result: {
-        en: "Ads work: 2.56% vs 1.79% conversion, +0.77 pp (95% CI 0.60–0.94 pp), ≈43% relative lift, p < 0.001 — about 770 extra conversions per 100,000 users reached. The lift is concentrated in users who saw 34+ ads (+3.80 pp) and is near zero for the other 80%; conversion also rises with exposure in the control group, so engagement is a likely confounder. Recommendation: continue the campaign, run a cost-benefit check before scaling, and test ad frequency in a follow-up experiment.",
-        id: "Iklan efektif: konversi 2,56% vs 1,79%, +0,77 pp (CI 95% 0,60–0,94 pp), ≈43% relative lift, p < 0,001 — sekitar 770 tambahan konversi per 100.000 pengguna. Kenaikan terkonsentrasi pada pengguna yang melihat 34+ iklan (+3,80 pp) dan hampir nol pada 80% pengguna lainnya; konversi juga naik seiring paparan di grup kontrol, sehingga engagement kemungkinan menjadi confounder. Rekomendasi: lanjutkan kampanye, lakukan analisis biaya-manfaat sebelum scale up, dan uji frekuensi iklan pada eksperimen lanjutan.",
+        en: "A typical home sold for $445,000. Spring is the seller's market: median price rose ~10% from February to April 2015 while sales volume more than doubled. Location is the biggest lever (3.9× gap between zip codes). Living area and build grade drive price (correlation 0.66 each; grade 7→8 means +36%), while condition barely matters (0.04). An excellent view more than doubles the price ($912.5K vs $430K), and more bedrooms raise the price but make each square foot cheaper. Recommendations: list in March–June, price from the zip code's median price per sq ft × living area then adjust for grade and view, advise investing in build quality over cosmetic fixes, and point budget buyers to south King County. Limits: one year of data and correlation is not causation.",
+        id: "Rumah tipikal terjual seharga $445.000. Musim semi adalah pasar penjual: harga median naik ~10% dari Februari ke April 2015 sementara volume penjualan lebih dari dua kali lipat. Lokasi adalah faktor terbesar (selisih 3,9× antar kode pos). Luas bangunan dan grade konstruksi menentukan harga (korelasi masing-masing 0,66; grade 7→8 berarti +36%), sedangkan kondisi nyaris tidak berpengaruh (0,04). View yang sangat baik melipatgandakan harga lebih dari dua kali ($912,5 ribu vs $430 ribu), dan lebih banyak kamar tidur menaikkan harga tetapi membuat harga per sq ft lebih murah. Rekomendasi: pasang listing pada Maret–Juni, tentukan harga dari median harga per sq ft kode pos × luas bangunan lalu sesuaikan dengan grade dan view, sarankan investasi pada kualitas bangunan ketimbang perbaikan kosmetik, dan arahkan pembeli ber-budget ke King County bagian selatan. Keterbatasan: data hanya satu tahun dan korelasi bukan kausalitas.",
       },
-      tags: ["SQL", "DuckDB", "Python", "statsmodels", "SciPy", "Matplotlib", "A/B Testing"],
-      github: "https://github.com/nabilakarimaazka/marketing-ab-test-analysis",
-      demo: "",
+      tags: ["Tableau", "Python", "pandas", "Data Visualization", "Real Estate"],
+      github: "https://github.com/nabilakarimaazka/king-county-house-price-dashboard",
+      demo: "https://public.tableau.com/views/DashboardHousePrice/Dashboard1",
     },
   ],
 
